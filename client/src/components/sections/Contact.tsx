@@ -176,7 +176,7 @@ const Contact = () => {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-6 py-3 bg-green text-navy font-mono hover:bg-opacity-90 transition-colors duration-200 rounded"
+                  className="px-6 py-3 bg-primary text-white font-mono hover:bg-primary/90 transition-colors duration-300 rounded"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
@@ -196,7 +196,7 @@ const Contact = () => {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="bg-green/10 p-3 rounded-lg text-green">
+                  <div className="bg-primary/10 p-3 rounded-lg text-primary">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
@@ -211,7 +211,7 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-green/10 p-3 rounded-lg text-green">
+                  <div className="bg-primary/10 p-3 rounded-lg text-primary">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
@@ -239,7 +239,7 @@ const Contact = () => {
                   href="https://github.com/johndoe"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-slate/10 dark:bg-slate-dark/20 w-12 h-12 rounded-full flex items-center justify-center text-slate dark:text-slate-light hover:bg-green/10 hover:text-green transition-all duration-200"
+                  className="bg-slate/10 dark:bg-slate-dark/20 w-12 h-12 rounded-full flex items-center justify-center text-slate dark:text-slate-light hover:bg-primary/10 hover:text-primary transition-all duration-300"
                 >
                   <Github className="h-5 w-5" />
                 </a>
@@ -247,7 +247,7 @@ const Contact = () => {
                   href="https://linkedin.com/in/johndoe"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-slate/10 dark:bg-slate-dark/20 w-12 h-12 rounded-full flex items-center justify-center text-slate dark:text-slate-light hover:bg-green/10 hover:text-green transition-all duration-200"
+                  className="bg-slate/10 dark:bg-slate-dark/20 w-12 h-12 rounded-full flex items-center justify-center text-slate dark:text-slate-light hover:bg-primary/10 hover:text-primary transition-all duration-300"
                 >
                   <Linkedin className="h-5 w-5" />
                 </a>
@@ -255,7 +255,7 @@ const Contact = () => {
                   href="https://twitter.com/johndoe"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-slate/10 dark:bg-slate-dark/20 w-12 h-12 rounded-full flex items-center justify-center text-slate dark:text-slate-light hover:bg-green/10 hover:text-green transition-all duration-200"
+                  className="bg-slate/10 dark:bg-slate-dark/20 w-12 h-12 rounded-full flex items-center justify-center text-slate dark:text-slate-light hover:bg-primary/10 hover:text-primary transition-all duration-300"
                 >
                   <Twitter className="h-5 w-5" />
                 </a>
@@ -263,7 +263,7 @@ const Contact = () => {
                   href="https://instagram.com/johndoe"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-slate/10 dark:bg-slate-dark/20 w-12 h-12 rounded-full flex items-center justify-center text-slate dark:text-slate-light hover:bg-green/10 hover:text-green transition-all duration-200"
+                  className="bg-slate/10 dark:bg-slate-dark/20 w-12 h-12 rounded-full flex items-center justify-center text-slate dark:text-slate-light hover:bg-primary/10 hover:text-primary transition-all duration-300"
                 >
                   <Instagram className="h-5 w-5" />
                 </a>
