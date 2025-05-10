@@ -202,10 +202,10 @@ const Contact = () => {
                   <div>
                     <h5 className="font-bold text-navy dark:text-white">Email</h5>
                     <a
-                      href="mailto:hello@johndoe.dev"
+                      href="mailto:aniketg2003patel@gmail.com"
                       className="text-slate dark:text-slate-light hover:text-primary dark:hover:text-primary transition-colors duration-200"
                     >
-                      hello@johndoe.dev
+                      aniketg2003patel@gmail.com
                     </a>
                   </div>
                 </div>
@@ -216,7 +216,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h5 className="font-bold text-navy dark:text-white">Location</h5>
-                    <p className="text-slate dark:text-slate-light">San Francisco, CA</p>
+                    <p className="text-slate dark:text-slate-light">Mansfield, OH</p>
                   </div>
                 </div>
 
@@ -226,7 +226,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h5 className="font-bold text-navy dark:text-white">Phone</h5>
-                    <p className="text-slate dark:text-slate-light">(123) 456-7890</p>
+                    <p className="text-slate dark:text-slate-light">(272) 446-0986</p>
                   </div>
                 </div>
               </div>
@@ -236,7 +236,7 @@ const Contact = () => {
               <h4 className="text-xl font-bold text-navy dark:text-white mb-6">Connect with me</h4>
               <div className="flex gap-4">
                 <a
-                  href="https://github.com/johndoe"
+                  href="https://github.com/Aniket25042003"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-slate/10 dark:bg-slate-dark/20 w-12 h-12 rounded-full flex items-center justify-center text-slate dark:text-slate-light hover:bg-primary/10 hover:text-primary transition-all duration-300"
@@ -244,7 +244,7 @@ const Contact = () => {
                   <Github className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/johndoe"
+                  href="https://www.linkedin.com/in/aniketpatel2003/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-slate/10 dark:bg-slate-dark/20 w-12 h-12 rounded-full flex items-center justify-center text-slate dark:text-slate-light hover:bg-primary/10 hover:text-primary transition-all duration-300"
@@ -252,7 +252,7 @@ const Contact = () => {
                   <Linkedin className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://twitter.com/johndoe"
+                  href="https://twitter.com/@Aniket60503436"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-slate/10 dark:bg-slate-dark/20 w-12 h-12 rounded-full flex items-center justify-center text-slate dark:text-slate-light hover:bg-primary/10 hover:text-primary transition-all duration-300"
@@ -260,7 +260,7 @@ const Contact = () => {
                   <Twitter className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://instagram.com/johndoe"
+                  href="https://instagram.com/_aniket_254"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-slate/10 dark:bg-slate-dark/20 w-12 h-12 rounded-full flex items-center justify-center text-slate dark:text-slate-light hover:bg-primary/10 hover:text-primary transition-all duration-300"

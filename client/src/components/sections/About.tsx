@@ -31,22 +31,22 @@ const About = () => {
 
             <ul className="grid grid-cols-2 gap-2 text-slate dark:text-slate-light">
               <li className="flex items-center">
-                <span className="text-green mr-2">▹</span> JavaScript (ES6+)
+                <span className="text-green mr-2">▹</span> Python
               </li>
               <li className="flex items-center">
                 <span className="text-green mr-2">▹</span> React
               </li>
               <li className="flex items-center">
-                <span className="text-green mr-2">▹</span> Node.js
+                <span className="text-green mr-2">▹</span> JavaScript
               </li>
               <li className="flex items-center">
-                <span className="text-green mr-2">▹</span> TypeScript
+                <span className="text-green mr-2">▹</span> Machine Learning
               </li>
               <li className="flex items-center">
-                <span className="text-green mr-2">▹</span> Python
+                <span className="text-green mr-2">▹</span> Deep Learning
               </li>
               <li className="flex items-center">
-                <span className="text-green mr-2">▹</span> AWS
+                <span className="text-green mr-2">▹</span> Hardware Accelerators
               </li>
             </ul>
           </motion.div>

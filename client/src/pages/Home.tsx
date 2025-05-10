@@ -19,7 +19,7 @@ const Home = () => {
   });
   
   useEffect(() => {
-    document.title = "John Doe | Software Developer";
+    document.title = "Aniket Patel | AI/ML Researcher | Software Engineer";
   }, []);
 
   return (

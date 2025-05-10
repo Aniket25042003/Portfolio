@@ -28,8 +28,8 @@ const Projects = () => {
             onClick={() => handleFilterClick("all")}
             className={`filter-btn px-4 py-2 rounded-full font-mono text-sm transition-colors duration-200 ${
               activeFilter === "all"
-                ? "bg-primary bg-opacity-10 text-primary"
-                : "bg-slate bg-opacity-10 text-slate dark:text-slate-light hover:bg-primary hover:bg-opacity-10 hover:text-primary"
+                ? "bg-primary bg-opacity-10 text-white"
+                : "bg-slate bg-opacity-10 text-white hover:bg-primary hover:bg-opacity-10"
             }`}
           >
             All
@@ -38,8 +38,8 @@ const Projects = () => {
             onClick={() => handleFilterClick("web")}
             className={`filter-btn px-4 py-2 rounded-full font-mono text-sm transition-colors duration-200 ${
               activeFilter === "web"
-                ? "bg-primary bg-opacity-10 text-primary"
-                : "bg-slate bg-opacity-10 text-slate dark:text-slate-light hover:bg-primary hover:bg-opacity-10 hover:text-primary"
+                ? "bg-primary bg-opacity-10 text-white"
+                : "bg-slate bg-opacity-10 text-white hover:bg-primary hover:bg-opacity-10"
             }`}
           >
             Web
@@ -48,8 +48,8 @@ const Projects = () => {
             onClick={() => handleFilterClick("mobile")}
             className={`filter-btn px-4 py-2 rounded-full font-mono text-sm transition-colors duration-200 ${
               activeFilter === "mobile"
-                ? "bg-primary bg-opacity-10 text-primary"
-                : "bg-slate bg-opacity-10 text-slate dark:text-slate-light hover:bg-primary hover:bg-opacity-10 hover:text-primary"
+                ? "bg-primary bg-opacity-10 text-white"
+                : "bg-slate bg-opacity-10 text-white hover:bg-primary hover:bg-opacity-10"
             }`}
           >
             Mobile
@@ -58,11 +58,21 @@ const Projects = () => {
             onClick={() => handleFilterClick("ai")}
             className={`filter-btn px-4 py-2 rounded-full font-mono text-sm transition-colors duration-200 ${
               activeFilter === "ai"
-                ? "bg-primary bg-opacity-10 text-primary"
-                : "bg-slate bg-opacity-10 text-slate dark:text-slate-light hover:bg-primary hover:bg-opacity-10 hover:text-primary"
+                ? "bg-primary bg-opacity-10 text-white"
+                : "bg-slate bg-opacity-10 text-white hover:bg-primary hover:bg-opacity-10"
             }`}
           >
             AI
+          </button>
+          <button
+            onClick={() => handleFilterClick("data")}
+            className={`filter-btn px-4 py-2 rounded-full font-mono text-sm transition-colors duration-200 ${
+              activeFilter === "data"
+                ? "bg-primary bg-opacity-10 text-white"
+                : "bg-slate bg-opacity-10 text-white hover:bg-primary hover:bg-opacity-10"
+            }`}
+          >
+            Data
           </button>
         </div>
 
@@ -80,7 +90,7 @@ const Projects = () => {
           transition={{ duration: 0.5 }}
         >
           <a
-            href="https://github.com/johndoe"
+            href="https://github.com/Aniket25042003"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 font-mono"

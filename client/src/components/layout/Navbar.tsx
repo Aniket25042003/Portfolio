@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
-import { useTheme } from "@/lib/theme-provider";
 import { Button } from "@/components/ui/button";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -30,27 +28,15 @@ const Navbar = () => {
     setMobileMenuOpen(false);
   };
 
-  const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    // Manually add class to body as a fallback
-    document.body.classList.remove("light", "dark");
-    document.body.classList.add(newTheme);
-  };
-
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/90 dark:bg-navy-dark/90 backdrop-blur-md shadow-md"
-          : "bg-white/0 dark:bg-transparent"
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 bg-navy-dark`}
     >
       <div className="container mx-auto px-6 py-4">
         <nav className="flex justify-between items-center">
           {/* Logo */}
-          <a href="#hero" className="text-2xl font-mono font-bold text-navy dark:text-white">
-            <span className="text-primary">&lt;</span>JD
+          <a href="#hero" className="text-2xl font-mono font-bold text-white">
+            <span className="text-primary">&lt;</span>AP
             <span className="text-primary">/&gt;</span>
           </a>
 
@@ -92,16 +78,8 @@ const Navbar = () => {
             >
               Contact
             </a>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={toggleTheme}
-              className="rounded-full bg-slate/10 dark:bg-navy-light text-navy dark:text-white hover:bg-slate/20 dark:hover:bg-navy transition-colors duration-200"
-            >
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
             <a
-              href="/resume.pdf"
+              href="/assets/resume.pdf"
               className="px-4 py-2 rounded border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 font-mono text-sm"
             >
               Resume
@@ -113,7 +91,7 @@ const Navbar = () => {
             variant="ghost"
             size="icon"
             onClick={toggleMobileMenu}
-            className="md:hidden text-navy dark:text-white"
+            className="md:hidden text-white"
           >
             {mobileMenuOpen ? (
               <X className="h-6 w-6" />
@@ -126,7 +104,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`md:hidden bg-white dark:bg-navy-light py-4 px-6 transition-all duration-300 ${
+        className={`md:hidden bg-navy-dark py-4 px-6 transition-all duration-300 ${
           mobileMenuOpen ? "block" : "hidden"
         }`}
       >
@@ -180,14 +158,6 @@ const Navbar = () => {
             >
               Resume
             </a>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={toggleTheme}
-              className="rounded-full bg-slate/10 dark:bg-navy-light text-navy dark:text-white hover:bg-slate/20 dark:hover:bg-navy transition-colors duration-200"
-            >
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
           </div>
         </div>
       </div>

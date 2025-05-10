@@ -55,7 +55,7 @@ const ProjectCard = ({
               alt={`${title} Project`}
               className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="absolute top-3 right-3 bg-primary rounded-full px-3 py-1 text-xs font-mono text-white">
+            <div className="absolute top-3 right-3 bg-blue-500 rounded-full px-3 py-1 text-xs font-mono text-white">
               {category}
             </div>
           </div>
@@ -68,14 +68,14 @@ const ProjectCard = ({
                 href={source}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline font-mono text-sm flex items-center gap-1"
+                className="px-4 py-2 border border-blue-500 text-blue-500 rounded font-mono text-sm flex items-center gap-2 hover:bg-blue-500/10 transition-colors duration-200"
                 onClick={(e) => e.stopPropagation()}
               >
                 <Github className="h-4 w-4" />
                 <span>Source</span>
               </a>
               <button
-                className="text-primary font-mono text-sm flex items-center gap-1"
+                className="px-4 py-2 border border-blue-500 text-blue-500 rounded font-mono text-sm flex items-center gap-2 hover:bg-blue-500/10 transition-colors duration-200"
                 onClick={toggleExpand}
               >
                 <span>Details</span>
@@ -101,7 +101,7 @@ const ProjectCard = ({
           >
             <button 
               onClick={toggleExpand}
-              className="absolute top-3 right-3 z-10 bg-primary/10 hover:bg-primary/20 rounded-full p-1 text-primary transition-colors duration-200"
+              className="absolute top-3 right-3 z-10 bg-blue-500/10 hover:bg-blue-500/20 rounded-full p-1 text-blue-500 transition-colors duration-200"
             >
               <X className="h-5 w-5" />
             </button>
@@ -112,7 +112,7 @@ const ProjectCard = ({
                 alt={`${title} Project`}
                 className="w-full h-64 object-cover"
               />
-              <div className="absolute top-3 left-3 bg-primary rounded-full px-3 py-1 text-xs font-mono text-white">
+              <div className="absolute top-3 left-3 bg-blue-500 rounded-full px-3 py-1 text-xs font-mono text-white">
                 {category}
               </div>
             </div>
@@ -141,7 +141,7 @@ const ProjectCard = ({
                   href={demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 bg-primary text-white rounded font-mono text-sm flex items-center gap-2 hover:bg-primary/90 transition-colors duration-200"
+                  className="px-4 py-2 bg-blue-500 text-white rounded font-mono text-sm flex items-center gap-2 hover:bg-blue-500/90 transition-colors duration-200"
                 >
                   <ExternalLink className="h-4 w-4" />
                   <span>Live Demo</span>
@@ -150,7 +150,7 @@ const ProjectCard = ({
                   href={source}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 border border-primary text-primary rounded font-mono text-sm flex items-center gap-2 hover:bg-primary/10 transition-colors duration-200"
+                  className="px-4 py-2 border border-blue-500 text-blue-500 rounded font-mono text-sm flex items-center gap-2 hover:bg-blue-500/10 transition-colors duration-200"
                 >
                   <Github className="h-4 w-4" />
                   <span>Source Code</span>

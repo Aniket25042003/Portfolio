@@ -33,7 +33,7 @@ const Hero = () => {
   }, []);
 
   // Typing animation for the role line
-  const roles = ["AI/ML Researcher", "Software Engineer", "Computer Science Student", "Tech Innovator"];
+  const roles = ["AI/ML Researcher", "Software Engineer", "Computer Science Student", "Tech Enthusiast"];
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -199,13 +199,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            I'm a software developer specializing in building exceptional digital experiences.
-            Currently, I'm focused on building accessible, human-centered products at{" "}
-            <a href="#" className="text-primary hover:underline relative group">
-              Acme Inc
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            .
+            I'm a passionate Computer Science junior at Ashland University with a strong focus on AI and machine learning, dedicated to building innovative, real-world solutions through projects that span computer vision, NLP, and intelligent systems.
           </motion.p>
           
           <motion.div

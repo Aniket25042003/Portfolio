@@ -13,14 +13,14 @@ const Education = () => {
       school: "Ashland University",
       location: "Ashland, OH",
       period: "2024-2026",
-      description: "Minors: Mathematics, Management Information Systems, Honors Program. At the moment, I am actively engaged in the pursuit of a Bachelor of Science degree in Computer Science with Mathematics and Management Information Systems minors, while also participating in the honor program."
+      description: "Minors: Mathematics, Management Information Systems, Honors Program.\nAt the moment, I am actively engaged in the pursuit of a Bachelor of Science degree in Computer Science with Mathematics and Management Information Systems minors, while also participating in the honor program."
     },
     {
       degree: "B.S. Computer Science",
       school: "Wilkes University",
       location: "Wilkes-Barre, PA",
       period: "2022-2024",
-      description: "Minor: Honors Program. Studied computer science at Wilkes University."
+      description: "Minor: Honors Program.\nStudied computer science at Wilkes University."
     }
   ];
 
@@ -77,7 +77,7 @@ const Education = () => {
                   <span className="text-sm">{item.location}</span>
                 </div>
                 
-                <p className="text-slate dark:text-slate-light">{item.description}</p>
+                <p className="text-slate dark:text-slate-light whitespace-pre-line">{item.description}</p>
                 
                 <div className="absolute -bottom-3 -right-3 h-20 w-20 bg-primary/10 rounded-full filter blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
