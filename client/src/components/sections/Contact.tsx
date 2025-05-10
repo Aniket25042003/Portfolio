@@ -111,7 +111,7 @@ const Contact = () => {
                         <FormControl>
                           <Input 
                             {...field} 
-                            className="w-full px-4 py-2 rounded border border-slate/20 dark:border-slate-dark/20 bg-white dark:bg-navy-light focus:outline-none focus:ring-2 focus:ring-green/50 text-navy dark:text-white" 
+                            className="w-full px-4 py-2 rounded border border-slate/20 dark:border-slate-dark/20 bg-white dark:bg-navy-light focus:outline-none focus:ring-2 focus:ring-primary/50 text-navy dark:text-white" 
                           />
                         </FormControl>
                         <FormMessage />
@@ -129,7 +129,7 @@ const Contact = () => {
                           <Input 
                             {...field} 
                             type="email" 
-                            className="w-full px-4 py-2 rounded border border-slate/20 dark:border-slate-dark/20 bg-white dark:bg-navy-light focus:outline-none focus:ring-2 focus:ring-green/50 text-navy dark:text-white" 
+                            className="w-full px-4 py-2 rounded border border-slate/20 dark:border-slate-dark/20 bg-white dark:bg-navy-light focus:outline-none focus:ring-2 focus:ring-primary/50 text-navy dark:text-white" 
                           />
                         </FormControl>
                         <FormMessage />
@@ -147,7 +147,7 @@ const Contact = () => {
                       <FormControl>
                         <Input 
                           {...field} 
-                          className="w-full px-4 py-2 rounded border border-slate/20 dark:border-slate-dark/20 bg-white dark:bg-navy-light focus:outline-none focus:ring-2 focus:ring-green/50 text-navy dark:text-white" 
+                          className="w-full px-4 py-2 rounded border border-slate/20 dark:border-slate-dark/20 bg-white dark:bg-navy-light focus:outline-none focus:ring-2 focus:ring-primary/50 text-navy dark:text-white" 
                         />
                       </FormControl>
                       <FormMessage />
@@ -165,7 +165,7 @@ const Contact = () => {
                         <Textarea 
                           {...field} 
                           rows={5} 
-                          className="w-full px-4 py-2 rounded border border-slate/20 dark:border-slate-dark/20 bg-white dark:bg-navy-light focus:outline-none focus:ring-2 focus:ring-green/50 text-navy dark:text-white resize-none" 
+                          className="w-full px-4 py-2 rounded border border-slate/20 dark:border-slate-dark/20 bg-white dark:bg-navy-light focus:outline-none focus:ring-2 focus:ring-primary/50 text-navy dark:text-white resize-none" 
                         />
                       </FormControl>
                       <FormMessage />
@@ -221,7 +221,7 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-green/10 p-3 rounded-lg text-green">
+                  <div className="bg-primary/10 p-3 rounded-lg text-primary">
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
