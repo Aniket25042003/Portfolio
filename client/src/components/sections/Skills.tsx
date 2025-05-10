@@ -105,10 +105,10 @@ const Skills = () => {
           <div className="absolute bottom-0 left-0 -mb-20 -ml-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
           
           <div className="relative z-10">
-            <SkillCategory title="Frontend Development" skills={skillsData.frontendSkills} />
-            <SkillCategory title="Backend Development" skills={skillsData.backendSkills} />
-            <SkillCategory title="Tools & Infrastructure" skills={skillsData.toolsSkills} />
-            <SkillCategory title="Other Technologies" skills={skillsData.otherSkills} />
+            <SkillCategory title="Programming Languages" skills={skillsData.frontendSkills} />
+            <SkillCategory title="Frontend Technologies" skills={skillsData.backendSkills} />
+            <SkillCategory title="Backend & Cloud" skills={skillsData.toolsSkills} />
+            <SkillCategory title="AI, ML & Database Tools" skills={skillsData.otherSkills} />
           </div>
         </div>
       </div>
