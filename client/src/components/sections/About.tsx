@@ -20,16 +20,10 @@ const About = () => {
             transition={{ duration: 0.5 }}
           >
             <p className="text-slate dark:text-slate-light">
-              Hello! I'm John, a software developer based in San Francisco, CA. I enjoy creating
-              things that live on the internet, whether that be websites, applications, or anything
-              in between. My goal is to always build products that provide pixel-perfect, performant
-              experiences.
+              Hi, I'm Aniket Patel, a senior majoring in Computer Science at Ashland University, where I currently serve as an AI/ML Researcher. I'm passionate about creating smart, scalable systems that blend software engineering, machine learning, and real-time data to solve meaningful, real-world problems.
             </p>
             <p className="text-slate dark:text-slate-light">
-              Shortly after graduating from{" "}
-              <span className="text-green">Stanford University</span>, I joined the engineering team
-              at Acme Inc. where I work on a wide variety of interesting and meaningful projects on a
-              daily basis.
+              My academic and research interests lie at the intersection of applied AI, real-time systems, and hardware acceleration.
             </p>
             <p className="text-slate dark:text-slate-light">
               Here are a few technologies I've been working with recently:
@@ -67,8 +61,8 @@ const About = () => {
             <div className="absolute inset-0 border-2 border-green rounded translate-x-5 translate-y-5 transition-transform group-hover:translate-x-4 group-hover:translate-y-4 duration-300"></div>
             <div className="relative rounded overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&h=500"
-                alt="John Doe Profile Picture"
+                src="/assets/aniket-patel.jpg"
+                alt="Aniket Patel Profile Picture"
                 className="rounded hover:filter hover:grayscale transition-all duration-300 h-80 w-80 object-cover"
               />
               <div className="absolute inset-0 bg-green/20 dark:bg-green/10 rounded"></div>

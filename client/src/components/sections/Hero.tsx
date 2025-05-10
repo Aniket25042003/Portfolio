@@ -33,7 +33,7 @@ const Hero = () => {
   }, []);
 
   // Typing animation for the role line
-  const roles = ["Software Developer", "Frontend Engineer", "UI/UX Enthusiast", "Tech Explorer"];
+  const roles = ["AI/ML Researcher", "Software Engineer", "Computer Science Student", "Tech Innovator"];
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -144,7 +144,7 @@ const Hero = () => {
           >
             <span className="inline-block">
               <span className="inline-block relative">
-                J
+                A
                 <motion.span 
                   className="absolute -top-1 -right-1 h-3 w-3 bg-primary rounded-full"
                   animate={{ 
@@ -158,12 +158,14 @@ const Hero = () => {
                   }}
                 />
               </span>
-              ohn&nbsp;
+              niket&nbsp;
             </span>
             <span className="inline-block">
-              <span className="inline-block">D</span>
-              <span className="inline-block">o</span>
+              <span className="inline-block">P</span>
+              <span className="inline-block">a</span>
+              <span className="inline-block">t</span>
               <span className="inline-block">e</span>
+              <span className="inline-block">l</span>
               <motion.span 
                 className="inline-block text-primary"
                 animate={{ 

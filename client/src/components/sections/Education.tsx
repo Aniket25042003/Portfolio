@@ -10,17 +10,17 @@ const Education = () => {
   const educationData = [
     {
       degree: "B.S. Computer Science",
-      school: "Stanford University",
-      location: "Stanford, CA",
-      period: "2016-2020",
-      description: "Graduated with honors. Specialized in Artificial Intelligence and Machine Learning. Participated in research projects and hackathons."
+      school: "Ashland University",
+      location: "Ashland, OH",
+      period: "2024-2026",
+      description: "Minors: Mathematics, Management Information Systems, Honors Program. At the moment, I am actively engaged in the pursuit of a Bachelor of Science degree in Computer Science with Mathematics and Management Information Systems minors, while also participating in the honor program."
     },
     {
-      degree: "M.S. Computer Science",
-      school: "MIT",
-      location: "Cambridge, MA",
-      period: "2020-2021",
-      description: "Focused on advanced algorithms and distributed systems. Completed thesis on optimization techniques for edge computing."
+      degree: "B.S. Computer Science",
+      school: "Wilkes University",
+      location: "Wilkes-Barre, PA",
+      period: "2022-2024",
+      description: "Minor: Honors Program. Studied computer science at Wilkes University."
     }
   ];
 
