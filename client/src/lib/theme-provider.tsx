@@ -45,6 +45,9 @@ export function ThemeProvider({
     }
     
     root.classList.add(theme);
+
+    // Explicitly apply dark/light class to body element too
+    document.body.className = theme;
   }, [theme]);
 
   const value = {

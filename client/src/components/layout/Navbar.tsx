@@ -31,7 +31,11 @@ const Navbar = () => {
   };
 
   const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    // Manually add class to body as a fallback
+    document.body.classList.remove("light", "dark");
+    document.body.classList.add(newTheme);
   };
 
   return (
@@ -45,9 +49,9 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <nav className="flex justify-between items-center">
           {/* Logo */}
-          <a href="#hero" className="text-2xl font-mono font-bold text-navy dark:text-green">
-            <span className="text-green">&lt;</span>JD
-            <span className="text-green">/&gt;</span>
+          <a href="#hero" className="text-2xl font-mono font-bold text-navy dark:text-white">
+            <span className="text-primary">&lt;</span>JD
+            <span className="text-primary">/&gt;</span>
           </a>
 
           {/* Desktop Navigation */}
