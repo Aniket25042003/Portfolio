@@ -54,7 +54,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <a
               href="#about"
-              className="text-slate hover:text-green dark:text-slate-light dark:hover:text-green transition-colors duration-200 font-mono text-sm"
+              className="text-slate hover:text-primary dark:text-slate-light dark:hover:text-primary transition-colors duration-200 font-mono text-sm"
             >
               About
             </a>
@@ -84,7 +84,7 @@ const Navbar = () => {
             </a>
             <a
               href="#contact"
-              className="text-slate hover:text-green dark:text-slate-light dark:hover:text-green transition-colors duration-200 font-mono text-sm"
+              className="text-slate hover:text-primary dark:text-slate-light dark:hover:text-primary transition-colors duration-200 font-mono text-sm"
             >
               Contact
             </a>
@@ -130,7 +130,7 @@ const Navbar = () => {
           <a
             href="#about"
             onClick={closeMobileMenu}
-            className="text-slate hover:text-green dark:text-slate-light dark:hover:text-green transition-colors duration-200 font-mono text-sm"
+            className="text-slate hover:text-primary dark:text-slate-light dark:hover:text-primary transition-colors duration-200 font-mono text-sm"
           >
             About
           </a>
