@@ -98,7 +98,7 @@ const Navbar = () => {
             </Button>
             <a
               href="/resume.pdf"
-              className="px-4 py-2 rounded border-2 border-green text-green hover:bg-green hover:bg-opacity-10 transition-all duration-200 font-mono text-sm"
+              className="px-4 py-2 rounded border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 font-mono text-sm"
             >
               Resume
             </a>
@@ -165,14 +165,14 @@ const Navbar = () => {
           <a
             href="#contact"
             onClick={closeMobileMenu}
-            className="text-slate hover:text-green dark:text-slate-light dark:hover:text-green transition-colors duration-200 font-mono text-sm"
+            className="text-slate hover:text-primary dark:text-slate-light dark:hover:text-primary transition-colors duration-200 font-mono text-sm"
           >
             Contact
           </a>
           <div className="flex justify-between items-center pt-2 border-t border-slate/20 dark:border-slate-dark/20">
             <a
               href="/resume.pdf"
-              className="px-4 py-2 rounded border-2 border-green text-green hover:bg-green hover:bg-opacity-10 transition-all duration-200 font-mono text-sm"
+              className="px-4 py-2 rounded border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 font-mono text-sm"
             >
               Resume
             </a>

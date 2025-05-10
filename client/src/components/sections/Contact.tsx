@@ -203,7 +203,7 @@ const Contact = () => {
                     <h5 className="font-bold text-navy dark:text-white">Email</h5>
                     <a
                       href="mailto:hello@johndoe.dev"
-                      className="text-slate dark:text-slate-light hover:text-green dark:hover:text-green transition-colors duration-200"
+                      className="text-slate dark:text-slate-light hover:text-primary dark:hover:text-primary transition-colors duration-200"
                     >
                       hello@johndoe.dev
                     </a>
