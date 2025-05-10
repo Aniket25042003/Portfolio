@@ -5,6 +5,7 @@ import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
 import Experience from "@/components/sections/Experience";
+import Education from "@/components/sections/Education";
 import Contact from "@/components/sections/Contact";
 import { useEffect } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
@@ -24,7 +25,7 @@ const Home = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-green z-50 origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-primary z-50 origin-left"
         style={{ scaleX }}
       />
       <Navbar />
@@ -32,9 +33,10 @@ const Home = () => {
       <main>
         <Hero />
         <About />
-        <Skills />
-        <Projects />
+        <Education />
         <Experience />
+        <Projects />
+        <Skills />
         <Contact />
       </main>
       

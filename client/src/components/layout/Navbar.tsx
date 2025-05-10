@@ -59,22 +59,28 @@ const Navbar = () => {
               About
             </a>
             <a
-              href="#skills"
-              className="text-slate hover:text-green dark:text-slate-light dark:hover:text-green transition-colors duration-200 font-mono text-sm"
+              href="#education"
+              className="text-slate hover:text-primary dark:text-slate-light dark:hover:text-primary transition-colors duration-200 font-mono text-sm"
             >
-              Skills
+              Education
+            </a>
+            <a
+              href="#experience"
+              className="text-slate hover:text-primary dark:text-slate-light dark:hover:text-primary transition-colors duration-200 font-mono text-sm"
+            >
+              Experience
             </a>
             <a
               href="#projects"
-              className="text-slate hover:text-green dark:text-slate-light dark:hover:text-green transition-colors duration-200 font-mono text-sm"
+              className="text-slate hover:text-primary dark:text-slate-light dark:hover:text-primary transition-colors duration-200 font-mono text-sm"
             >
               Projects
             </a>
             <a
-              href="#experience"
-              className="text-slate hover:text-green dark:text-slate-light dark:hover:text-green transition-colors duration-200 font-mono text-sm"
+              href="#skills"
+              className="text-slate hover:text-primary dark:text-slate-light dark:hover:text-primary transition-colors duration-200 font-mono text-sm"
             >
-              Experience
+              Skills
             </a>
             <a
               href="#contact"
@@ -129,25 +135,32 @@ const Navbar = () => {
             About
           </a>
           <a
-            href="#skills"
+            href="#education"
             onClick={closeMobileMenu}
-            className="text-slate hover:text-green dark:text-slate-light dark:hover:text-green transition-colors duration-200 font-mono text-sm"
+            className="text-slate hover:text-primary dark:text-slate-light dark:hover:text-primary transition-colors duration-200 font-mono text-sm"
           >
-            Skills
-          </a>
-          <a
-            href="#projects"
-            onClick={closeMobileMenu}
-            className="text-slate hover:text-green dark:text-slate-light dark:hover:text-green transition-colors duration-200 font-mono text-sm"
-          >
-            Projects
+            Education
           </a>
           <a
             href="#experience"
             onClick={closeMobileMenu}
-            className="text-slate hover:text-green dark:text-slate-light dark:hover:text-green transition-colors duration-200 font-mono text-sm"
+            className="text-slate hover:text-primary dark:text-slate-light dark:hover:text-primary transition-colors duration-200 font-mono text-sm"
           >
             Experience
+          </a>
+          <a
+            href="#projects"
+            onClick={closeMobileMenu}
+            className="text-slate hover:text-primary dark:text-slate-light dark:hover:text-primary transition-colors duration-200 font-mono text-sm"
+          >
+            Projects
+          </a>
+          <a
+            href="#skills"
+            onClick={closeMobileMenu}
+            className="text-slate hover:text-primary dark:text-slate-light dark:hover:text-primary transition-colors duration-200 font-mono text-sm"
+          >
+            Skills
           </a>
           <a
             href="#contact"

@@ -1,106 +1,114 @@
 import { motion } from "framer-motion";
 import SectionTitle from "../ui/SectionTitle";
-import SkillBar from "../ui/SkillBar";
 import { skillsData } from "@/data/skillsData";
-import { 
-  Database, 
-  Server, 
-  LayoutGrid, 
-  Smartphone, 
-  GitBranch, 
-  Brain 
-} from "lucide-react";
+import * as SiIcons from "react-icons/si";
+import { useState } from "react";
 
-const SkillIcon = ({ name }: { name: string }) => {
-  switch (name.toLowerCase()) {
-    case "mongodb":
-      return <Database className="h-8 w-8 mb-2 text-green" />;
-    case "aws":
-      return <Server className="h-8 w-8 mb-2 text-green" />;
-    case "docker":
-      return <LayoutGrid className="h-8 w-8 mb-2 text-green" />;
-    case "react native":
-      return <Smartphone className="h-8 w-8 mb-2 text-green" />;
-    case "git":
-      return <GitBranch className="h-8 w-8 mb-2 text-green" />;
-    case "machine learning":
-      return <Brain className="h-8 w-8 mb-2 text-green" />;
-    default:
-      return <Database className="h-8 w-8 mb-2 text-green" />;
-  }
+// Component for individual tech stack item with animation
+const TechItem = ({ name, icon, color, index }: { name: string, icon: string, color: string, index: number }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  
+  // Dynamically import icon from react-icons
+  const IconComponent = (SiIcons as any)[icon];
+  
+  return (
+    <motion.div
+      className="relative group"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.3, delay: index * 0.05 }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="bg-white dark:bg-navy p-5 rounded-lg shadow-md text-center group-hover:shadow-xl transition-all duration-300 overflow-hidden">
+        {/* Background glow effect */}
+        <div 
+          className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500" 
+          style={{ backgroundColor: color, filter: 'blur(20px)' }}
+        />
+        
+        <div className="relative z-10">
+          {IconComponent && (
+            <div className="flex justify-center mb-4">
+              <motion.div
+                animate={{
+                  y: isHovered ? [0, -5, 0] : 0,
+                  scale: isHovered ? [1, 1.1, 1] : 1,
+                  rotate: isHovered ? [0, -5, 5, 0] : 0
+                }}
+                transition={{ duration: 0.5 }}
+                style={{ color: color }}
+                className="text-5xl mb-2"
+              >
+                <IconComponent />
+              </motion.div>
+            </div>
+          )}
+          
+          <p className="font-medium text-navy dark:text-white">{name}</p>
+        </div>
+        
+        {/* Decorative elements */}
+        <motion.div
+          className="absolute -bottom-10 -right-10 h-24 w-24 rounded-full opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+          style={{ backgroundColor: color }}
+          animate={{ 
+            scale: isHovered ? [1, 1.2, 1] : 1,
+          }}
+          transition={{ duration: 0.5, repeat: isHovered ? Infinity : 0, repeatType: "reverse" }}
+        />
+      </div>
+    </motion.div>
+  );
+};
+
+// Component for skill category
+const SkillCategory = ({ title, skills }: { title: string, skills: any[] }) => {
+  return (
+    <motion.div
+      className="mb-12"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+    >
+      <h3 className="text-xl font-bold text-navy dark:text-white mb-6 flex items-center">
+        <div className="h-1 w-6 bg-primary mr-3"></div>
+        {title}
+      </h3>
+      
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        {skills.map((skill, index) => (
+          <TechItem
+            key={`${title}-${index}`}
+            name={skill.name}
+            icon={skill.icon}
+            color={skill.color}
+            index={index}
+          />
+        ))}
+      </div>
+    </motion.div>
+  );
 };
 
 const Skills = () => {
   return (
     <section id="skills" className="py-20 bg-white/50 dark:bg-navy-light/30 transition-all duration-300">
       <div className="container mx-auto px-6">
-        <SectionTitle number="02." title="Skills" />
+        <SectionTitle number="05." title="Skills" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div data-skill-container className="space-y-8">
-            {skillsData.skillBars.map((skill, index) => (
-              <SkillBar 
-                key={index} 
-                name={skill.name} 
-                percentage={skill.percentage} 
-              />
-            ))}
-          </div>
-
-          <div className="space-y-8">
-            <motion.h3 
-              className="text-xl font-bold dark:text-white mb-6"
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              Other Skills & Tools
-            </motion.h3>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
-              {skillsData.otherSkills.map((skill, index) => (
-                <motion.div
-                  key={index}
-                  className="skill-tag p-4 bg-white dark:bg-navy shadow rounded-lg text-center hover:shadow-md transition-shadow duration-300"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                >
-                  <SkillIcon name={skill} />
-                  <p className="font-mono text-sm text-navy dark:text-slate-light">
-                    {skill}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-
-            <motion.div 
-              className="p-6 bg-white dark:bg-navy shadow rounded-lg mt-10"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <h4 className="font-bold text-navy dark:text-white mb-4">Education</h4>
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="font-mono text-green">2016-2020</div>
-                  <div>
-                    <h5 className="font-bold text-navy dark:text-white">Stanford University</h5>
-                    <p className="text-slate">B.S. Computer Science</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="font-mono text-green">2020-2021</div>
-                  <div>
-                    <h5 className="font-bold text-navy dark:text-white">MIT</h5>
-                    <p className="text-slate">M.S. Computer Science</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+        <div className="relative">
+          {/* Decorative background elements */}
+          <div className="absolute top-0 right-0 -mt-20 -mr-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 -mb-20 -ml-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+          
+          <div className="relative z-10">
+            <SkillCategory title="Frontend Development" skills={skillsData.frontendSkills} />
+            <SkillCategory title="Backend Development" skills={skillsData.backendSkills} />
+            <SkillCategory title="Tools & Infrastructure" skills={skillsData.toolsSkills} />
+            <SkillCategory title="Other Technologies" skills={skillsData.otherSkills} />
           </div>
         </div>
       </div>
