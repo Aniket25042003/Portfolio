@@ -65,7 +65,7 @@ const About = () => {
                 alt="Aniket Patel Profile Picture"
                 className="rounded hover:filter hover:grayscale transition-all duration-300 h-80 w-80 object-cover"
               />
-              <div className="absolute inset-0 bg-green/20 dark:bg-green/10 rounded"></div>
+              <div className="absolute inset-0 bg-white/10 dark:bg-green/10 rounded"></div>
             </div>
           </motion.div>
         </div>
