@@ -7,11 +7,15 @@ async function throwIfResNotOk(res: Response) {
   }
 }
 
+// Set the BASE_URL based on the Deploy environment
+const BASE_URL = 'http://0.0.0.0:5000';
+
 export async function apiRequest(
   method: string,
-  url: string,
+  endpoint: string,
   data?: unknown | undefined,
 ): Promise<Response> {
+  const url = `${BASE_URL}${endpoint}`;
   const res = await fetch(url, {
     method,
     headers: data ? { "Content-Type": "application/json" } : {},

@@ -37,24 +37,39 @@ const Contact = () => {
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
-    
+
     try {
-      // In a real implementation, this would send data to a service like EmailJS or backend API
-      console.log("Form data:", data);
-      
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          recipient: data.email, // Or your intended recipient email address
+          subject: data.subject,
+          message: data.message,
+        }),
       });
-      
-      form.reset();
-    } catch (error) {
+
+      if (response.ok) {
+        const result = await response.json();
+        toast({
+          title: "Message sent!",
+          description: result.message || "Thanks for reaching out. I'll get back to you soon.",
+        });
+        form.reset();
+      } else {
+        const errorResult = await response.json();
+        toast({
+          title: "Message failed to send",
+          description: errorResult.message || "There was an error sending your message. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error: any) {
       toast({
         title: "Message failed to send",
-        description: "There was an error sending your message. Please try again.",
+        description: "There was a network error. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -81,10 +96,9 @@ const Contact = () => {
             className="text-slate dark:text-slate-light mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            I'm currently looking for new opportunities. Whether you have a question or just want to say hi, 
+            I'm currently looking for new opportunities. Whether you have a question or just want to say hi,
             I'll do my best to get back to you!
           </motion.p>
         </div>
@@ -109,16 +123,16 @@ const Contact = () => {
                       <FormItem>
                         <FormLabel className="font-mono text-slate dark:text-slate-light">Name</FormLabel>
                         <FormControl>
-                          <Input 
-                            {...field} 
-                            className="w-full px-4 py-2 rounded border border-slate/20 dark:border-slate-dark/20 bg-white dark:bg-navy-light focus:outline-none focus:ring-2 focus:ring-primary/50 text-navy dark:text-white" 
+                          <Input
+                            {...field}
+                            className="w-full px-4 py-2 rounded border border-slate/20 dark:border-slate-dark/20 bg-white dark:bg-navy-light focus:outline-none focus:ring-2 focus:ring-primary/50 text-navy dark:text-white"
                           />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={form.control}
                     name="email"
@@ -126,10 +140,10 @@ const Contact = () => {
                       <FormItem>
                         <FormLabel className="font-mono text-slate dark:text-slate-light">Email</FormLabel>
                         <FormControl>
-                          <Input 
-                            {...field} 
-                            type="email" 
-                            className="w-full px-4 py-2 rounded border border-slate/20 dark:border-slate-dark/20 bg-white dark:bg-navy-light focus:outline-none focus:ring-2 focus:ring-primary/50 text-navy dark:text-white" 
+                          <Input
+                            {...field}
+                            type="email"
+                            className="w-full px-4 py-2 rounded border border-slate/20 dark:border-slate-dark/20 bg-white dark:bg-navy-light focus:outline-none focus:ring-2 focus:ring-primary/50 text-navy dark:text-white"
                           />
                         </FormControl>
                         <FormMessage />
@@ -145,9 +159,9 @@ const Contact = () => {
                     <FormItem>
                       <FormLabel className="font-mono text-slate dark:text-slate-light">Subject</FormLabel>
                       <FormControl>
-                        <Input 
-                          {...field} 
-                          className="w-full px-4 py-2 rounded border border-slate/20 dark:border-slate-dark/20 bg-white dark:bg-navy-light focus:outline-none focus:ring-2 focus:ring-primary/50 text-navy dark:text-white" 
+                        <Input
+                          {...field}
+                          className="w-full px-4 py-2 rounded border border-slate/20 dark:border-slate-dark/20 bg-white dark:bg-navy-light focus:outline-none focus:ring-2 focus:ring-primary/50 text-navy dark:text-white"
                         />
                       </FormControl>
                       <FormMessage />
@@ -162,10 +176,10 @@ const Contact = () => {
                     <FormItem>
                       <FormLabel className="font-mono text-slate dark:text-slate-light">Message</FormLabel>
                       <FormControl>
-                        <Textarea 
-                          {...field} 
-                          rows={5} 
-                          className="w-full px-4 py-2 rounded border border-slate/20 dark:border-slate-dark/20 bg-white dark:bg-navy-light focus:outline-none focus:ring-2 focus:ring-primary/50 text-navy dark:text-white resize-none" 
+                        <Textarea
+                          {...field}
+                          rows={5}
+                          className="w-full px-4 py-2 rounded border border-slate/20 dark:border-slate-dark/20 bg-white dark:bg-navy-light focus:outline-none focus:ring-2 focus:ring-primary/50 text-navy dark:text-white resize-none"
                         />
                       </FormControl>
                       <FormMessage />
