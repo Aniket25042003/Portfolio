@@ -13,14 +13,14 @@ const Education = () => {
       school: "Ashland University",
       location: "Ashland, OH",
       period: "2024-2026",
-      description: "Minors: Mathematics, Management Information Systems, Honors Program.\nAt the moment, I am actively engaged in the pursuit of a Bachelor of Science degree in Computer Science with Mathematics and Management Information Systems minors, while also participating in the honor program."
+      description: "Minors: Mathematics, Management Information Systems, Honors Program.\nI am currently pursuing a Bachelor of Science in Computer Science at Ashland University, where I am also involved in the Honors Program. I am also actively engaged in research related to artificial intelligence and machine learning."
     },
     {
       degree: "B.S. Computer Science",
       school: "Wilkes University",
       location: "Wilkes-Barre, PA",
       period: "2022-2024",
-      description: "Minor: Honors Program.\nStudied computer science at Wilkes University."
+      description: "Minor: Honors Program.\nI studied Computer Science at Wilkes University, where I was actively involved in the Honors Program. During my time there, I gained valuable knowledge and skills in various areas of computer science, including programming, algorithms, and software development."
     }
   ];
 

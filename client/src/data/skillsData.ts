@@ -1,3 +1,5 @@
+import { i } from "node_modules/vite/dist/node/types.d-aGj9QkWt";
+
 export const skillsData = {
   // Programming Languages
   frontendSkills: [
@@ -41,11 +43,6 @@ export const skillsData = {
       icon: "SiKotlin",
       color: "#7F52FF"
     },
-    {
-      name: "R",
-      icon: "SiR",
-      color: "#276DC3"
-    }
   ],
   // Frontend Technologies
   backendSkills: [
@@ -141,7 +138,37 @@ export const skillsData = {
       name: "Kubernetes",
       icon: "SiKubernetes",
       color: "#326CE5"
-    }
+    },
+    {
+      name: "Firebase",
+      icon: "SiFirebase",
+      color: "#FFCA28"
+    },
+    {
+      name: "Heroku",
+      icon: "SiHeroku",
+      color: "#430098"
+    },
+    {
+      name: "Vercel",
+      icon: "SiVercel",
+      color: "#000000"
+    },
+    {
+      name: "Render",
+      icon: "SiRender",
+      color: "#4D4D4D"
+    },
+    {
+      name: "Netlify",
+      icon: "SiNetlify",
+      color: "#00C7B7"
+    },
+    {
+      name: "Postman",
+      icon: "SiPostman",
+      color: "#FF6C37"
+    },
   ],
   // AI & ML Tools
   otherSkills: [
@@ -181,6 +208,16 @@ export const skillsData = {
       color: "#336791"
     },
     {
+      name: "MySQL",
+      icon: "SiMysql",
+      color: "#4479A1"
+    },
+    {
+      name: "SQLite",
+      icon: "SiSqlite",
+      color: "#003B57"
+    },
+    {
       name: "MongoDB",
       icon: "SiMongodb",
       color: "#47A248"
@@ -191,9 +228,29 @@ export const skillsData = {
       color: "#F05032"
     },
     {
+      name: "GitHub",
+      icon: "SiGithub",
+      color: "#181717"
+    },
+    {
+      name: "GitLab",
+      icon: "SiGitlab",
+      color: "#E24329"
+    },
+    {
       name: "VS Code",
       icon: "SiVisualstudiocode",
       color: "#007ACC"
-    }
+    },
+    {
+      name: "Jupyter Notebook",
+      icon: "SiJupyter",
+      color: "#F37626"
+    },
+    {
+      name: "Figma",
+      icon: "SiFigma",
+      color: "#F24E1E"
+    },
   ]
 };
