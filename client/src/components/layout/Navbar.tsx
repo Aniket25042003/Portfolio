@@ -29,8 +29,33 @@ const Navbar = () => {
     setMobileMenuOpen(false);
   };
 
+  // Smooth scroll function for mobile menu
+  const smoothScrollTo = (targetId: string) => {
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      const headerOffset = 80; // Account for fixed header
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleMobileNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    closeMobileMenu();
+    
+    if (href.startsWith('#')) {
+      smoothScrollTo(href);
+    }
+  };
+
   // Navigation items for the gooey nav
   const navItems = [
+    { label: "Home", href: "#hero" },
     { label: "About", href: "#about" },
     { label: "Education", href: "#education" },
     { label: "Experience", href: "#experience" },
@@ -50,7 +75,14 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <nav className="flex justify-between items-center">
           {/* Logo */}
-          <a href="#hero" className="text-2xl font-mono font-bold text-white z-10 relative">
+          <a 
+            href="#hero" 
+            onClick={(e) => {
+              e.preventDefault();
+              smoothScrollTo('#hero');
+            }}
+            className="text-2xl font-mono font-bold text-white z-10 relative"
+          >
             <span className="text-primary"><</span>AP
             <span className="text-primary">/></span>
           </a>
@@ -105,7 +137,7 @@ const Navbar = () => {
             <a
               key={index}
               href={item.href}
-              onClick={closeMobileMenu}
+              onClick={(e) => handleMobileNavClick(e, item.href)}
               className="text-slate hover:text-primary dark:text-slate-light dark:hover:text-primary transition-colors duration-200 font-mono text-sm py-2 px-4 rounded hover:bg-primary/10"
             >
               {item.label}
