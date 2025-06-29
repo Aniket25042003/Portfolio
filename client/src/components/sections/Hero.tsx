@@ -66,13 +66,13 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden"
+      className="relative min-h-screen"
     >
       <LampContainer className="bg-navy-dark dark:bg-navy-dark">
-        <div className="container mx-auto px-6 py-12 relative z-50">
-          <div className="flex flex-col items-center space-y-4 text-center">
+        <div className="container mx-auto px-6 relative z-50 max-w-4xl">
+          <div className="flex flex-col items-center space-y-6 text-center">
             <motion.p
-              className="font-mono text-primary"
+              className="font-mono text-primary text-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -81,7 +81,7 @@ const Hero = () => {
             </motion.p>
             
             <motion.h1
-              className="text-5xl md:text-7xl font-bold bg-gradient-to-br from-white to-slate-300 bg-clip-text text-transparent"
+              className="text-5xl md:text-7xl font-bold bg-gradient-to-br from-white to-slate-300 bg-clip-text text-transparent leading-tight"
               initial={{ opacity: 0.5, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ 
@@ -130,7 +130,7 @@ const Hero = () => {
             </motion.h1>
             
             <motion.h2
-              className="text-4xl md:text-6xl font-bold bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text text-transparent mt-2 relative"
+              className="text-3xl md:text-5xl font-bold bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text text-transparent relative leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
@@ -142,7 +142,7 @@ const Hero = () => {
             </motion.h2>
             
             <motion.p
-              className="text-slate-300 max-w-xl text-lg mt-6"
+              className="text-slate-300 max-w-2xl text-lg leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
@@ -151,14 +151,14 @@ const Hero = () => {
             </motion.p>
             
             <motion.div
-              className="flex gap-4 mt-8"
+              className="flex flex-col sm:flex-row gap-4 mt-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.9 }}
             >
               <motion.a
                 href="#projects"
-                className="px-6 py-3 rounded border-2 border-primary text-primary hover:bg-primary hover:text-white hover:border-transparent transition-all duration-300 font-mono relative overflow-hidden group"
+                className="px-8 py-3 rounded border-2 border-primary text-primary hover:bg-primary hover:text-white hover:border-transparent transition-all duration-300 font-mono relative overflow-hidden group"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -167,7 +167,7 @@ const Hero = () => {
               </motion.a>
               <motion.a
                 href="#contact"
-                className="px-6 py-3 rounded bg-primary text-white hover:bg-opacity-90 transition-all duration-200 font-mono shadow-lg hover:shadow-primary/50"
+                className="px-8 py-3 rounded bg-primary text-white hover:bg-opacity-90 transition-all duration-200 font-mono shadow-lg hover:shadow-primary/50"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
