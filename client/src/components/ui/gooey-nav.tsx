@@ -247,7 +247,6 @@ export const GooeyNav: React.FC<GooeyNavProps> = ({
             --active-text: white;
             --particle-color: rgba(64, 123, 255, 0.8);
 
-            --filter-backdrop-bg: rgba(34, 40, 49, 0.95);
             --filter-blend-mode: lighten;
 
             --linear-ease: linear(0, 0.068, 0.19 2.7%, 0.804 8.1%, 1.037, 1.199 13.2%, 1.245, 1.27 15.8%, 1.274, 1.272 17.4%, 1.249 19.1%, 0.996 28%, 0.949, 0.928 33.3%, 0.926, 0.933 36.8%, 1.001 45.6%, 1.013, 1.019 50.8%, 1.018 54.4%, 1 63.1%, 0.995 68%, 1.001 85%, 1);
@@ -271,7 +270,8 @@ export const GooeyNav: React.FC<GooeyNavProps> = ({
             box-shadow: none !important;
           }
           
-          .gooey-nav-container ul li:focus {
+          .gooey-nav-container ul li:focus,
+          .gooey-nav-container ul li:focus-visible {
             outline: none !important;
             border: none !important;
             box-shadow: none !important;
@@ -307,7 +307,8 @@ export const GooeyNav: React.FC<GooeyNavProps> = ({
             box-shadow: none !important;
           }
           
-          .gooey-nav-container ul li a:focus {
+          .gooey-nav-container ul li a:focus,
+          .gooey-nav-container ul li a:focus-visible {
             outline: none !important;
             border: none !important;
             box-shadow: none !important;
@@ -325,14 +326,6 @@ export const GooeyNav: React.FC<GooeyNavProps> = ({
           .gooey-nav-container .effect.filter {
             filter: blur(7px) contrast(100);
             mix-blend-mode: var(--filter-blend-mode);
-          }
-          
-          .gooey-nav-container .effect.filter::before {
-            content: "";
-            position: absolute;
-            inset: -75px;
-            z-index: -2;
-            background: var(--filter-backdrop-bg);
           }
           
           .gooey-nav-container .effect.filter::after {
