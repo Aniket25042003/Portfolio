@@ -36,9 +36,9 @@ export const LampContainer = ({
         className
       )}
     >
-      {/* Lamp light effects container */}
-      <div className="absolute inset-0 flex w-full items-center justify-center">
-        <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0">
+      {/* Lamp light effects container - moved upward */}
+      <div className="absolute inset-0 flex w-full items-start justify-center pt-16">
+        <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0 -translate-y-20">
           <motion.div
             initial={{ opacity: 0.5, width: "15rem" }}
             whileInView={{ opacity: 1, width: "30rem" }}
@@ -98,8 +98,8 @@ export const LampContainer = ({
         </div>
       </div>
 
-      {/* Content container */}
-      <div className="relative z-50 flex flex-col items-center justify-center min-h-screen px-5 pt-20">
+      {/* Content container - adjusted spacing */}
+      <div className="relative z-50 flex flex-col items-center justify-center min-h-screen px-5 pt-32">
         {children}
       </div>
     </div>
