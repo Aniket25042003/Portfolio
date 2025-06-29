@@ -93,6 +93,26 @@
       scroll-behavior: auto;
     }
   }
+
+  /* Enhanced gooey nav styles for better integration */
+  .gooey-nav-container {
+    --nav-bg: rgba(34, 40, 49, 0.95);
+    --nav-border: rgba(64, 123, 255, 0.3);
+    --nav-text: rgba(255, 255, 255, 0.9);
+    --nav-text-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.2);
+
+    --bubble-bg: rgba(64, 123, 255, 1);
+    --active-text: white;
+    --particle-color: rgba(64, 123, 255, 0.8);
+
+    --filter-backdrop-bg: rgba(34, 40, 49, 0.95);
+    --filter-blend-mode: lighten;
+  }
+
+  /* Smooth transitions for navbar */
+  .navbar-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 /* Timeline styling */
