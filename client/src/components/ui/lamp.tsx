@@ -121,8 +121,8 @@ export const HeroLampContainer = ({
         className
       )}
     >
-      {/* Lamp light effect - moved down to prevent cutoff */}
-      <div className="relative flex w-full flex-1 scale-y-100 items-center justify-center isolate z-0 pt-20">
+      {/* Lamp light effect - moved further down to prevent cutoff */}
+      <div className="relative flex w-full flex-1 scale-y-100 items-center justify-center isolate z-0 pt-32">
         <motion.div
           initial={{ opacity: 0.5, width: "15rem" }}
           whileInView={{ opacity: 1, width: "30rem" }}
@@ -182,8 +182,8 @@ export const HeroLampContainer = ({
         <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-navy-dark"></div>
       </div>
 
-      {/* Hero Content positioned within the lamp light cone - adjusted positioning */}
-      <div className="relative z-50 flex -translate-y-60 flex-col items-center px-5 max-w-4xl mx-auto">
+      {/* Hero Content positioned within the lamp light cone - adjusted positioning further down */}
+      <div className="relative z-50 flex -translate-y-40 flex-col items-center px-5 max-w-4xl mx-auto">
         <HeroContent />
       </div>
     </div>
