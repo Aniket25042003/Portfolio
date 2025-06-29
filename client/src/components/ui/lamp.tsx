@@ -117,12 +117,12 @@ export const HeroLampContainer = ({
   return (
     <div
       className={cn(
-        "relative flex min-h-screen flex-col items-center justify-center overflow-hidden w-full z-0 pt-32",
+        "relative flex min-h-screen flex-col items-center justify-center overflow-hidden w-full z-0",
         className
       )}
     >
-      {/* Lamp light effect - moved down significantly to prevent cutoff */}
-      <div className="relative flex w-full flex-1 scale-y-100 items-center justify-center isolate z-0 translate-y-24">
+      {/* Lamp light effect - positioned to illuminate the text below */}
+      <div className="relative flex w-full flex-1 scale-y-100 items-center justify-center isolate z-0">
         <motion.div
           initial={{ opacity: 0.5, width: "15rem" }}
           whileInView={{ opacity: 1, width: "30rem" }}
@@ -182,8 +182,8 @@ export const HeroLampContainer = ({
         <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-navy-dark"></div>
       </div>
 
-      {/* Hero Content positioned in the lamp light - adjusted positioning for better visibility */}
-      <div className="relative z-50 flex -translate-y-56 flex-col items-center px-5 max-w-4xl mx-auto">
+      {/* Hero Content positioned within the lamp light cone */}
+      <div className="relative z-50 flex -translate-y-80 flex-col items-center px-5 max-w-4xl mx-auto">
         <HeroContent />
       </div>
     </div>
@@ -236,7 +236,7 @@ const HeroContent = () => {
 
   return (
     <>
-      {/* Spotlight reveal effect for the intro text */}
+      {/* All hero text positioned within the lamp light */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -245,8 +245,9 @@ const HeroContent = () => {
           duration: 0.6,
           ease: "easeOut",
         }}
-        className="relative"
+        className="relative text-center"
       >
+        {/* "Hi, my name is" text - now positioned within the light */}
         <motion.p
           className="font-mono text-primary text-lg mb-4"
           initial={{ opacity: 0, y: 20 }}
@@ -259,124 +260,124 @@ const HeroContent = () => {
         >
           Hi, my name is
         </motion.p>
-      </motion.div>
 
-      {/* Main name with lamp light reveal effect */}
-      <motion.h1
-        initial={{ opacity: 0.3, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.5,
-          duration: 1,
-          ease: "easeInOut",
-        }}
-        className="text-5xl md:text-7xl font-bold text-center leading-tight mb-6"
-      >
-        <motion.span
-          className="bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text text-transparent"
-          initial={{ backgroundPosition: "200% center" }}
-          animate={{ backgroundPosition: "0% center" }}
+        {/* Main name with lamp light reveal effect */}
+        <motion.h1
+          initial={{ opacity: 0.3, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{
-            delay: 0.8,
-            duration: 1.2,
+            delay: 0.5,
+            duration: 1,
             ease: "easeInOut",
           }}
-          style={{
-            backgroundSize: "200% 100%",
-          }}
+          className="text-5xl md:text-7xl font-bold leading-tight mb-6"
         >
-          <span className="inline-block">
-            <span className="inline-block relative">
-              A
+          <motion.span
+            className="bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text text-transparent"
+            initial={{ backgroundPosition: "200% center" }}
+            animate={{ backgroundPosition: "0% center" }}
+            transition={{
+              delay: 0.8,
+              duration: 1.2,
+              ease: "easeInOut",
+            }}
+            style={{
+              backgroundSize: "200% 100%",
+            }}
+          >
+            <span className="inline-block">
+              <span className="inline-block relative">
+                A
+                <motion.span 
+                  className="absolute -top-1 -right-1 h-3 w-3 bg-primary rounded-full"
+                  animate={{ 
+                    scale: [1, 1.5, 1],
+                    opacity: [1, 0.5, 1]
+                  }} 
+                  transition={{ 
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1.5
+                  }}
+                />
+              </span>
+              niket&nbsp;
+            </span>
+            <span className="inline-block">
+              <span className="inline-block">P</span>
+              <span className="inline-block">a</span>
+              <span className="inline-block">t</span>
+              <span className="inline-block">e</span>
+              <span className="inline-block">l</span>
               <motion.span 
-                className="absolute -top-1 -right-1 h-3 w-3 bg-primary rounded-full"
+                className="inline-block text-primary"
                 animate={{ 
-                  scale: [1, 1.5, 1],
-                  opacity: [1, 0.5, 1]
-                }} 
+                  rotate: [0, 10, 0, -10, 0]
+                }}
                 transition={{ 
-                  duration: 2,
+                  duration: 2.5,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: 1.5
+                  repeatDelay: 3,
+                  delay: 2
                 }}
-              />
+              >.</motion.span>
             </span>
-            niket&nbsp;
-          </span>
-          <span className="inline-block">
-            <span className="inline-block">P</span>
-            <span className="inline-block">a</span>
-            <span className="inline-block">t</span>
-            <span className="inline-block">e</span>
-            <span className="inline-block">l</span>
-            <motion.span 
-              className="inline-block text-primary"
-              animate={{ 
-                rotate: [0, 10, 0, -10, 0]
-              }}
-              transition={{ 
-                duration: 2.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                repeatDelay: 3,
-                delay: 2
-              }}
-            >.</motion.span>
-          </span>
-        </motion.span>
-      </motion.h1>
-      
-      {/* Role text with typewriter effect */}
-      <motion.h2
-        className="text-3xl md:text-5xl font-bold text-center mb-8"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1.2 }}
-      >
-        <span className="bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text text-transparent">
-          I'm a{" "}
-        </span>
-        <span className="text-primary relative">
-          {displayText}
-          <span className="absolute right-0 top-0 h-full border-r-4 border-primary animate-pulse"></span>
-        </span>
-      </motion.h2>
-      
-      {/* Description with fade-in effect */}
-      <motion.p
-        className="text-slate-300 max-w-2xl text-lg leading-relaxed text-center mb-8"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1.5 }}
-      >
-        I'm a passionate Computer Science junior at Ashland University with a strong focus on AI and machine learning, dedicated to building innovative, real-world solutions through projects that span computer vision, NLP, and intelligent systems.
-      </motion.p>
-      
-      {/* Action buttons */}
-      <motion.div
-        className="flex flex-col sm:flex-row gap-4"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1.8 }}
-      >
-        <motion.a
-          href="#projects"
-          className="px-8 py-3 rounded border-2 border-primary text-primary hover:bg-primary hover:text-white hover:border-transparent transition-all duration-300 font-mono relative overflow-hidden group"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          </motion.span>
+        </motion.h1>
+        
+        {/* Role text with typewriter effect */}
+        <motion.h2
+          className="text-3xl md:text-5xl font-bold mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1.2 }}
         >
-          <span className="relative z-10">View my work</span>
-          <span className="absolute inset-0 bg-primary transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100 -z-0"></span>
-        </motion.a>
-        <motion.a
-          href="#contact"
-          className="px-8 py-3 rounded bg-primary text-white hover:bg-opacity-90 transition-all duration-200 font-mono shadow-lg hover:shadow-primary/50"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          <span className="bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text text-transparent">
+            I'm a{" "}
+          </span>
+          <span className="text-primary relative">
+            {displayText}
+            <span className="absolute right-0 top-0 h-full border-r-4 border-primary animate-pulse"></span>
+          </span>
+        </motion.h2>
+        
+        {/* Description with fade-in effect */}
+        <motion.p
+          className="text-slate-300 max-w-2xl text-lg leading-relaxed mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1.5 }}
         >
-          Contact me
-        </motion.a>
+          I'm a passionate Computer Science junior at Ashland University with a strong focus on AI and machine learning, dedicated to building innovative, real-world solutions through projects that span computer vision, NLP, and intelligent systems.
+        </motion.p>
+        
+        {/* Action buttons */}
+        <motion.div
+          className="flex flex-col sm:flex-row gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1.8 }}
+        >
+          <motion.a
+            href="#projects"
+            className="px-8 py-3 rounded border-2 border-primary text-primary hover:bg-primary hover:text-white hover:border-transparent transition-all duration-300 font-mono relative overflow-hidden group"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span className="relative z-10">View my work</span>
+            <span className="absolute inset-0 bg-primary transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100 -z-0"></span>
+          </motion.a>
+          <motion.a
+            href="#contact"
+            className="px-8 py-3 rounded bg-primary text-white hover:bg-opacity-90 transition-all duration-200 font-mono shadow-lg hover:shadow-primary/50"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Contact me
+          </motion.a>
+        </motion.div>
       </motion.div>
 
       {/* Scroll indicator */}
