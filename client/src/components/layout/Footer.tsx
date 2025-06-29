@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="mb-4 md:mb-0">
             <a href="#" className="text-xl font-mono font-bold text-navy dark:text-green">
               <span className="text-green">&lt;</span>AP
-              <span className="text-green">/&gt;</span>
+              <span className="text-green">&sol;&gt;</span>
             </a>
           </div>
 

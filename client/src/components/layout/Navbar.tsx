@@ -83,8 +83,8 @@ const Navbar = () => {
             }}
             className="text-2xl font-mono font-bold text-white z-10 relative"
           >
-            <span className="text-primary"><</span>AP
-            <span className="text-primary">/></span>
+            <span className="text-primary">&lt;</span>AP
+            <span className="text-primary">&sol;&gt;</span>
           </a>
 
           {/* Desktop Navigation with GooeyNav */}
