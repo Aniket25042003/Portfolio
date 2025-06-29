@@ -66,7 +66,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen"
+      className="relative min-h-screen -mt-20 pt-20"
     >
       <LampContainer className="bg-navy-dark dark:bg-navy-dark">
         <div className="container mx-auto px-6 relative z-50 max-w-4xl">
