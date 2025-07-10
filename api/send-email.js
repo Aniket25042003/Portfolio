@@ -32,7 +32,7 @@ export default async function handler(req, res) {
     }
 
     // Create a Nodemailer transporter (configure with your email provider)
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       service: 'gmail', // Use your email service (e.g., 'gmail', 'SendGrid')
       auth: {
         user: process.env.GMAIL_USER, // Your Gmail email address (or SendGrid API key, etc.)
