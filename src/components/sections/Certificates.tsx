@@ -57,7 +57,7 @@ const Certificates = () => {
     {
       title: "GPT Wrapper Hackathon - Nebius AI Studio",
       button: "View Achievement",
-      src: "/certificates/gpt-wrapper-hackathon-nebius-ai-studio-certificate.png",
+      src: "/certificates/gpt-wrapper-hackathon-sponsored-by-nebius-ai-studio-certificate.png",
     },
     {
       title: "EverydAI Challenge",
