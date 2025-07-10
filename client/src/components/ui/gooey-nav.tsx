@@ -14,6 +14,7 @@ export interface GooeyNavProps {
   particleR?: number;
   timeVariance?: number;
   initialActiveIndex?: number;
+  activeIndex?: number; // Add external control prop
 }
 
 export const GooeyNav: React.FC<GooeyNavProps> = ({
@@ -24,11 +25,29 @@ export const GooeyNav: React.FC<GooeyNavProps> = ({
   particleR = 100,
   timeVariance = 300,
   initialActiveIndex = 0,
+  activeIndex: externalActiveIndex, // Add external active index prop
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLUListElement>(null);
   const filterRef = useRef<HTMLSpanElement>(null);
   const [activeIndex, setActiveIndex] = useState<number>(initialActiveIndex);
+
+  // Sync external activeIndex with internal state
+  useEffect(() => {
+    if (externalActiveIndex !== undefined && externalActiveIndex !== activeIndex) {
+      setActiveIndex(externalActiveIndex);
+      
+      // Update visual effects when external activeIndex changes
+      if (navRef.current && filterRef.current) {
+        const listItems = navRef.current.querySelectorAll("li");
+        const targetLi = listItems[externalActiveIndex] as HTMLElement;
+        if (targetLi) {
+          updateEffectPosition(targetLi);
+          makeParticles(filterRef.current);
+        }
+      }
+    }
+  }, [externalActiveIndex]);
 
   const noise = (n = 1) => n / 2 - Math.random() * n;
 

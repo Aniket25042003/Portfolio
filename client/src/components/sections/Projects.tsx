@@ -19,7 +19,7 @@ const Projects = () => {
       );
 
   return (
-    <section id="projects" className="py-20 transition-all duration-300">
+    <section id="projects" className="py-20 bg-white/50 dark:bg-navy-light/30 transition-all duration-300">
       <div className="container mx-auto px-6">
         <SectionTitle number="04." title="Projects" />
 

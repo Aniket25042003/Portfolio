@@ -287,9 +287,9 @@ const HeroContent = () => {
           >
             <span className="inline-block">
               <span className="inline-block relative">
-                A
+                <span className="relative z-10">A</span>
                 <motion.span 
-                  className="absolute -top-1 -right-1 h-3 w-3 bg-primary rounded-full"
+                  className="absolute -top-2 -right-2 h-3 w-3 bg-primary rounded-full z-20"
                   animate={{ 
                     scale: [1, 1.5, 1],
                     opacity: [1, 0.5, 1]
@@ -302,7 +302,7 @@ const HeroContent = () => {
                   }}
                 />
               </span>
-              niket&nbsp;
+              Aniket&nbsp;
             </span>
             <span className="inline-block">
               <span className="inline-block">P</span>
@@ -355,7 +355,7 @@ const HeroContent = () => {
         
         {/* Action buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-4"
+          className="flex flex-col sm:flex-row gap-4 justify-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1.8 }}

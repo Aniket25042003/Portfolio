@@ -41,7 +41,7 @@ const Education = () => {
   };
 
   return (
-    <section id="education" className="py-20 transition-all duration-300">
+    <section id="education" className="py-20 bg-white/50 dark:bg-navy-light/30 transition-all duration-300">
       <div className="container mx-auto px-6">
         <SectionTitle number="02." title="Education" />
 

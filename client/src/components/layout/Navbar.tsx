@@ -6,6 +6,19 @@ import { GooeyNav } from "@/components/ui/gooey-nav";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState(0); // Add active section state
+
+  // Navigation items for the gooey nav
+  const navItems = [
+    { label: "Home", href: "#hero" },
+    { label: "About", href: "#about" },
+    { label: "Education", href: "#education" },
+    { label: "Experience", href: "#experience" },
+    { label: "Projects", href: "#projects" },
+    { label: "Certificates", href: "#certificates" },
+    { label: "Skills", href: "#skills" },
+    { label: "Contact", href: "#contact" },
+  ];
 
   // Handle scroll event to change navbar style
   useEffect(() => {
@@ -19,6 +32,60 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Scroll spy functionality to detect which section is in view
+  useEffect(() => {
+    const handleScrollSpy = () => {
+      const sections = navItems.map(item => ({
+        id: item.href.slice(1), // Remove the # from href
+        element: document.querySelector(item.href)
+      })).filter(section => section.element);
+
+      if (sections.length === 0) return;
+
+      const scrollPosition = window.scrollY + 100; // Offset for header height
+
+      // Find which section is currently in view
+      let currentSection = 0;
+      
+      for (let i = 0; i < sections.length; i++) {
+        const section = sections[i];
+        const rect = section.element!.getBoundingClientRect();
+        const sectionTop = rect.top + window.scrollY;
+        
+        if (scrollPosition >= sectionTop) {
+          currentSection = i;
+        } else {
+          break;
+        }
+      }
+
+      // Special case: if we're near the bottom of the page, highlight the last section
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+        currentSection = sections.length - 1;
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    // Throttle scroll events for better performance
+    let ticking = false;
+    const throttledScrollSpy = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScrollSpy();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", throttledScrollSpy);
+    // Run once on mount to set initial state
+    handleScrollSpy();
+    
+    return () => window.removeEventListener("scroll", throttledScrollSpy);
   }, []);
 
   const toggleMobileMenu = () => {
@@ -53,17 +120,6 @@ const Navbar = () => {
     }
   };
 
-  // Navigation items for the gooey nav
-  const navItems = [
-    { label: "Home", href: "#hero" },
-    { label: "About", href: "#about" },
-    { label: "Education", href: "#education" },
-    { label: "Experience", href: "#experience" },
-    { label: "Projects", href: "#projects" },
-    { label: "Skills", href: "#skills" },
-    { label: "Contact", href: "#contact" },
-  ];
-
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -84,7 +140,7 @@ const Navbar = () => {
             className="text-2xl font-mono font-bold text-white z-10 relative"
           >
             <span className="text-primary">&lt;</span>AP
-            <span className="text-primary">&sol;&gt;</span>
+            <span className="text-primary">&gt;</span>
           </a>
 
           {/* Desktop Navigation with GooeyNav */}
@@ -95,6 +151,7 @@ const Navbar = () => {
               particleDistances={[70, 8]}
               particleR={80}
               initialActiveIndex={0}
+              activeIndex={activeSection}
               animationTime={500}
               timeVariance={200}
             />

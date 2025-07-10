@@ -95,9 +95,9 @@ const SkillCategory = ({ title, skills }: { title: string, skills: any[] }) => {
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-20 bg-white/50 dark:bg-navy-light/30 transition-all duration-300">
+    <section id="skills" className="py-20 bg-navy-light/50 dark:bg-navy-light/40 transition-all duration-300">
       <div className="container mx-auto px-6">
-        <SectionTitle number="05." title="Skills" />
+        <SectionTitle number="06." title="Skills" />
 
         <div className="relative">
           {/* Decorative background elements */}

@@ -21,7 +21,7 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="py-20 bg-white/50 dark:bg-navy-light/30 transition-all duration-300">
+    <section id="experience" className="py-20 bg-navy-dark transition-all duration-300">
       <div className="container mx-auto px-6">
         <SectionTitle number="03." title="Experience" />
 

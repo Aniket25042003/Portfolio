@@ -7,7 +7,7 @@ const About = () => {
   const { isVisible: isImageVisible, elementRef: imageRef } = useScrollReveal({ delay: 200 });
 
   return (
-    <section id="about" className="py-20 transition-all duration-300">
+    <section id="about" className="py-20 bg-navy-dark transition-all duration-300">
       <div className="container mx-auto px-6">
         <SectionTitle number="01." title="About Me" />
 
