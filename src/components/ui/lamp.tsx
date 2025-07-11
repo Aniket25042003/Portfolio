@@ -122,7 +122,7 @@ export const HeroLampContainer = ({
       )}
     >
       {/* Lamp light effect - moved further down to prevent cutoff */}
-      <div className="relative flex w-full flex-1 scale-y-100 items-center justify-center isolate z-0 pt-32">
+      <div className="relative flex w-full flex-1 scale-y-100 items-center justify-center isolate z-0 pt-16 sm:pt-20 md:pt-32">
         <motion.div
           initial={{ opacity: 0.5, width: "15rem" }}
           whileInView={{ opacity: 1, width: "30rem" }}
@@ -166,7 +166,7 @@ export const HeroLampContainer = ({
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-cyan-400 blur-2xl"
+          className="absolute inset-auto z-30 h-36 w-64 -translate-y-[3rem] sm:-translate-y-[4rem] md:-translate-y-[6rem] rounded-full bg-cyan-400 blur-2xl"
         ></motion.div>
         <motion.div
           initial={{ width: "15rem" }}
@@ -176,14 +176,14 @@ export const HeroLampContainer = ({
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-cyan-400"
+          className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[4rem] sm:-translate-y-[5rem] md:-translate-y-[7rem] bg-cyan-400"
         ></motion.div>
 
-        <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-navy-dark"></div>
+        <div className="absolute inset-auto z-40 h-28 sm:h-32 md:h-44 w-full -translate-y-[6rem] sm:-translate-y-[7rem] md:-translate-y-[12.5rem] bg-navy-dark"></div>
       </div>
 
       {/* Hero Content positioned within the lamp light cone - adjusted positioning further down */}
-      <div className="relative z-50 flex -translate-y-40 flex-col items-center px-5 max-w-4xl mx-auto">
+      <div className="relative z-50 flex -translate-y-24 sm:-translate-y-28 md:-translate-y-32 lg:-translate-y-40 flex-col items-center px-5 max-w-4xl mx-auto">
         <HeroContent />
       </div>
     </div>
@@ -270,7 +270,7 @@ const HeroContent = () => {
             duration: 1,
             ease: "easeInOut",
           }}
-          className="text-5xl md:text-7xl font-bold leading-tight mb-6"
+          className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight mb-6"
         >
           <motion.span
             className="bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text text-transparent"
@@ -329,7 +329,7 @@ const HeroContent = () => {
         
         {/* Role text with typewriter effect */}
         <motion.h2
-          className="text-3xl md:text-5xl font-bold mb-8"
+          className="text-2xl sm:text-3xl md:text-5xl font-bold mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1.2 }}
