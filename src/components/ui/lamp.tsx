@@ -181,7 +181,7 @@ export const HeroLampContainer = ({
       </div>
 
       {/* Hero Content positioned within the lamp light cone - adjusted positioning further down */}
-      <div className="relative z-50 flex -translate-y-48 sm:-translate-y-28 md:-translate-y-32 lg:-translate-y-40 flex-col items-center px-5 max-w-4xl mx-auto">
+      <div className="relative z-50 flex -translate-y-32 sm:-translate-y-28 md:-translate-y-32 lg:-translate-y-40 flex-col items-center px-5 max-w-4xl mx-auto">
         <HeroContent />
       </div>
     </div>
@@ -271,7 +271,7 @@ const HeroContent = () => {
           className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight mb-6"
         >
           <motion.span
-            className="bg-gradient-to-br from-slate-200 to-slate-400 sm:from-slate-300 sm:to-slate-500 bg-clip-text text-transparent"
+            className="text-slate-200 sm:bg-gradient-to-br sm:from-slate-300 sm:to-slate-500 sm:bg-clip-text sm:text-transparent"
             initial={{ backgroundPosition: "200% center" }}
             animate={{ backgroundPosition: "0% center" }}
             transition={{
