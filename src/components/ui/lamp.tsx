@@ -181,7 +181,7 @@ export const HeroLampContainer = ({
       </div>
 
       {/* Hero Content positioned within the lamp light cone - adjusted positioning further down */}
-      <div className="relative z-50 flex -translate-y-32 sm:-translate-y-28 md:-translate-y-32 lg:-translate-y-40 flex-col items-center px-5 max-w-4xl mx-auto">
+      <div className="relative z-50 flex -translate-y-28 sm:-translate-y-28 md:-translate-y-32 lg:-translate-y-40 flex-col items-center px-5 max-w-4xl mx-auto">
         <HeroContent />
       </div>
     </div>
