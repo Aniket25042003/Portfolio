@@ -96,8 +96,6 @@ export const LampContainer = ({
           className="absolute top-12 z-30 h-0.5 w-[30rem] bg-cyan-400"
         ></motion.div>
 
-        {/* Top mask to hide lamp structure */}
-        <div className="absolute top-0 z-40 h-12 w-full bg-slate-950"></div>
       </div>
 
       {/* Content area with proper spacing */}
@@ -183,7 +181,7 @@ export const HeroLampContainer = ({
       </div>
 
       {/* Hero Content positioned within the lamp light cone - adjusted positioning further down */}
-      <div className="relative z-50 flex -translate-y-24 sm:-translate-y-28 md:-translate-y-32 lg:-translate-y-40 flex-col items-center px-5 max-w-4xl mx-auto">
+      <div className="relative z-50 flex translate-y-4 sm:-translate-y-28 md:-translate-y-32 lg:-translate-y-40 flex-col items-center px-5 max-w-4xl mx-auto">
         <HeroContent />
       </div>
     </div>
