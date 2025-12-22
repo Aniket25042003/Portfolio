@@ -448,14 +448,14 @@ export const GooeyNav: React.FC<GooeyNavProps> = ({
         >
           <ul
             ref={navRef}
-            className={cn("flex gap-x-2 sm:gap-x-4 list-none p-0 px-2 sm:px-4 m-0 relative z-[3]")}
+            className={cn("flex gap-x-1 sm:gap-x-2 list-none p-0 px-2 sm:px-3 m-0 relative z-[3]")}
             role="menubar"
             aria-label="Main navigation"
           >
             {items.map((item, index) => (
               <li
                 key={index}
-                className={cn(`py-2 px-3 sm:py-3 sm:px-5 rounded-full relative cursor-pointer font-mono text-sm`,
+                className={cn(`py-2 px-2 sm:py-2.5 sm:px-3 rounded-full relative cursor-pointer font-mono text-sm`,
                            activeIndex === index ? "active" : "")}
                 onClick={(e) => handleClick(e, index, item.href)}
                 onKeyDown={(e) => {

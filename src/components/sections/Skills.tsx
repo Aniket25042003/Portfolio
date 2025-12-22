@@ -97,7 +97,7 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20 bg-navy-light/50 dark:bg-navy-light/40 transition-all duration-300">
       <div className="container mx-auto px-6">
-        <SectionTitle number="06." title="Skills" />
+        <SectionTitle number="07." title="Skills" />
 
         <div className="relative">
           {/* Decorative background elements */}
@@ -105,10 +105,13 @@ const Skills = () => {
           <div className="absolute bottom-0 left-0 -mb-20 -ml-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
           
           <div className="relative z-10">
-            <SkillCategory title="Programming Languages" skills={skillsData.frontendSkills} />
-            <SkillCategory title="Frontend Technologies" skills={skillsData.backendSkills} />
-            <SkillCategory title="Backend & Cloud" skills={skillsData.toolsSkills} />
-            <SkillCategory title="AI, ML & Database Tools" skills={skillsData.otherSkills} />
+            <SkillCategory title="Programming Languages" skills={skillsData.programmingLanguages} />
+            <SkillCategory title="Frontend Technologies" skills={skillsData.frontendSkills} />
+            <SkillCategory title="Backend Frameworks" skills={skillsData.backendSkills} />
+            <SkillCategory title="Cloud & DevOps" skills={skillsData.cloudSkills} />
+            <SkillCategory title="Databases" skills={skillsData.databaseSkills} />
+            <SkillCategory title="Deep Learning & NLP" skills={skillsData.deepLearningSkills} />
+            <SkillCategory title="AI & ML Tools" skills={skillsData.aiMlSkills} />
           </div>
         </div>
       </div>

@@ -1,8 +1,6 @@
-import { i } from "node_modules/vite/dist/node/types.d-aGj9QkWt";
-
 export const skillsData = {
   // Programming Languages
-  frontendSkills: [
+  programmingLanguages: [
     {
       name: "Python",
       icon: "SiPython",
@@ -17,11 +15,6 @@ export const skillsData = {
       name: "C++",
       icon: "SiCplusplus",
       color: "#00599C"
-    },
-    {
-      name: "Swift",
-      icon: "SiSwift",
-      color: "#FA7343"
     },
     {
       name: "PHP",
@@ -45,7 +38,7 @@ export const skillsData = {
     },
   ],
   // Frontend Technologies
-  backendSkills: [
+  frontendSkills: [
     {
       name: "HTML",
       icon: "SiHtml5",
@@ -67,42 +60,17 @@ export const skillsData = {
       color: "#000000"
     },
     {
-      name: "Vue.js",
-      icon: "SiVuedotjs",
-      color: "#4FC08D"
-    },
-    {
       name: "Tailwind CSS",
       icon: "SiTailwindcss",
       color: "#06B6D4"
     },
-    {
-      name: "Angular",
-      icon: "SiAngular",
-      color: "#DD0031"
-    },
-    {
-      name: "XML",
-      icon: "SiXml",
-      color: "#F36C3D"
-    }
   ],
-  // Backend & Cloud
-  toolsSkills: [
+  // Backend Frameworks
+  backendSkills: [
     {
       name: "Node.js",
       icon: "SiNodedotjs",
       color: "#339933"
-    },
-    {
-      name: "Express.js",
-      icon: "SiExpress",
-      color: "#000000"
-    },
-    {
-      name: "Spring Boot",
-      icon: "SiSpringboot",
-      color: "#6DB33F"
     },
     {
       name: "Flask",
@@ -114,13 +82,16 @@ export const skillsData = {
       icon: "SiFastapi",
       color: "#009688"
     },
+  ],
+  // Cloud & DevOps
+  cloudSkills: [
     {
       name: "AWS",
       icon: "SiAmazonaws",
       color: "#FF9900"
     },
     {
-      name: "Google Cloud",
+      name: "Google Cloud Platform",
       icon: "SiGooglecloud",
       color: "#4285F4"
     },
@@ -145,63 +116,13 @@ export const skillsData = {
       color: "#FFCA28"
     },
     {
-      name: "Heroku",
-      icon: "SiHeroku",
-      color: "#430098"
-    },
-    {
-      name: "Vercel",
-      icon: "SiVercel",
-      color: "#000000"
-    },
-    {
-      name: "Render",
-      icon: "SiRender",
-      color: "#4D4D4D"
-    },
-    {
-      name: "Netlify",
-      icon: "SiNetlify",
-      color: "#00C7B7"
-    },
-    {
       name: "Postman",
       icon: "SiPostman",
       color: "#FF6C37"
     },
   ],
-  // AI & ML Tools
-  otherSkills: [
-    {
-      name: "PyTorch",
-      icon: "SiPytorch",
-      color: "#EE4C2C"
-    },
-    {
-      name: "TensorFlow",
-      icon: "SiTensorflow",
-      color: "#FF6F00"
-    },
-    {
-      name: "Scikit-Learn",
-      icon: "SiScikit-learn",
-      color: "#F7931E"
-    },
-    {
-      name: "Pandas",
-      icon: "SiPandas",
-      color: "#150458"
-    },
-    {
-      name: "NumPy",
-      icon: "SiNumpy",
-      color: "#013243"
-    },
-    {
-      name: "Hugging Face",
-      icon: "SiHuggingface",
-      color: "#FFD21E"
-    },
+  // Databases
+  databaseSkills: [
     {
       name: "PostgreSQL",
       icon: "SiPostgresql",
@@ -222,6 +143,107 @@ export const skillsData = {
       icon: "SiMongodb",
       color: "#47A248"
     },
+  ],
+  // Deep Learning & NLP
+  deepLearningSkills: [
+    {
+      name: "Transformers",
+      icon: "SiHuggingface",
+      color: "#FFD21E"
+    },
+    {
+      name: "CNNs",
+      icon: "SiTensorflow",
+      color: "#FF6F00"
+    },
+    {
+      name: "LLaMA",
+      icon: "SiPytorch",
+      color: "#EE4C2C"
+    },
+    {
+      name: "BERT",
+      icon: "SiHuggingface",
+      color: "#FFD21E"
+    },
+    {
+      name: "GPT",
+      icon: "SiTensorflow",
+      color: "#FF6F00"
+    },
+    {
+      name: "NLTK",
+      icon: "SiPython",
+      color: "#3776AB"
+    },
+  ],
+  // AI & ML Tools
+  aiMlSkills: [
+    {
+      name: "PyTorch",
+      icon: "SiPytorch",
+      color: "#EE4C2C"
+    },
+    {
+      name: "TensorFlow",
+      icon: "SiTensorflow",
+      color: "#FF6F00"
+    },
+    {
+      name: "Scikit-Learn",
+      icon: "SiScikit-learn",
+      color: "#F7931E"
+    },
+    {
+      name: "Ollama",
+      icon: "SiOllama",
+      color: "#000000"
+    },
+    {
+      name: "ONNX",
+      icon: "SiOnnx",
+      color: "#000000"
+    },
+    {
+      name: "TensorRT",
+      icon: "SiTensorrt",
+      color: "#000000"
+    },
+    {
+      name: "MLflow",
+      icon: "SiMlflow",
+      color: "#000000"
+    },
+    {
+      name: "LangChain",
+      icon: "SiLangchain",
+      color: "#000000"
+    },
+    {
+      name: "LangGraph",
+      icon: "SiLanggraph",
+      color: "#000000"
+    },
+    {
+      name: "Pandas",
+      icon: "SiPandas",
+      color: "#150458"
+    },
+    {
+      name: "NumPy",
+      icon: "SiNumpy",
+      color: "#013243"
+    },
+    {
+      name: "Plotly",
+      icon: "SiPlotly",
+      color: "#000000"
+    },
+    {
+      name: "Hugging Face",
+      icon: "SiHuggingface",
+      color: "#FFD21E"
+    },
     {
       name: "Git",
       icon: "SiGit",
@@ -231,11 +253,6 @@ export const skillsData = {
       name: "GitHub",
       icon: "SiGithub",
       color: "#181717"
-    },
-    {
-      name: "GitLab",
-      icon: "SiGitlab",
-      color: "#E24329"
     },
     {
       name: "VS Code",
@@ -248,9 +265,9 @@ export const skillsData = {
       color: "#F37626"
     },
     {
-      name: "Figma",
-      icon: "SiFigma",
-      color: "#F24E1E"
+      name: "Google Colab",
+      icon: "SiGooglecolab",
+      color: "#F9AB00"
     },
   ]
 };

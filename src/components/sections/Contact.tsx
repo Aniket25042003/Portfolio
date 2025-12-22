@@ -80,7 +80,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-navy-dark/80 dark:bg-navy-dark transition-all duration-300">
       <div className="container mx-auto px-6">
-        <SectionTitle number="07." title="Contact" />
+        <SectionTitle number="08." title="Contact" />
 
         <div className="max-w-3xl mx-auto text-center mb-12">
           <motion.h3

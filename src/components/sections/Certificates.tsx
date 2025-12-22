@@ -75,7 +75,7 @@ const Certificates = () => {
     <section id="certificates" className="py-32 bg-navy-dark transition-all duration-300 scroll-smooth">
       <div className="container mx-auto px-6">
         <div className="mb-20">
-          <SectionTitle number="05." title="Certificates & Achievements" />
+          <SectionTitle number="06." title="Certificates & Achievements" />
         </div>
 
         <div className="max-w-7xl mx-auto">

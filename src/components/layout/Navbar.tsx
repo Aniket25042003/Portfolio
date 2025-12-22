@@ -15,6 +15,7 @@ const Navbar = () => {
     { label: "Education", href: "#education" },
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
+    { label: "Publications", href: "#publications" },
     { label: "Certificates", href: "#certificates" },
     { label: "Skills", href: "#skills" },
     { label: "Contact", href: "#contact" },
@@ -158,7 +159,7 @@ const Navbar = () => {
             
             {/* Resume Button */}
             <a
-              href="/resume.pdf"
+              href="/Aniket Patel Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="ml-4 px-4 py-2 rounded border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 font-mono text-sm backdrop-blur-sm"
@@ -202,7 +203,7 @@ const Navbar = () => {
           ))}
           <div className="flex justify-between items-center pt-2 border-t border-slate/20 dark:border-slate-dark/20">
             <a
-              href="/resume.pdf"
+              href="/Aniket Patel Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 rounded border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 font-mono text-sm"

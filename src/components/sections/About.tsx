@@ -34,10 +34,10 @@ const About = () => {
                 <span className="text-green mr-2">▹</span> Python
               </li>
               <li className="flex items-center">
-                <span className="text-green mr-2">▹</span> React
+                <span className="text-green mr-2">▹</span> C++
               </li>
               <li className="flex items-center">
-                <span className="text-green mr-2">▹</span> JavaScript
+                <span className="text-green mr-2">▹</span> AI Agents
               </li>
               <li className="flex items-center">
                 <span className="text-green mr-2">▹</span> Machine Learning
@@ -61,7 +61,7 @@ const About = () => {
             <div className="absolute inset-0 border-2 border-green rounded translate-x-5 translate-y-5 transition-transform group-hover:translate-x-4 group-hover:translate-y-4 duration-300"></div>
             <div className="relative rounded overflow-hidden">
               <img
-                src="/assets/aniket-patel.jpg"
+                src="/assets/Aniket-Patel.jpeg"
                 alt="Aniket Patel Profile Picture"
                 className="rounded hover:filter hover:grayscale transition-all duration-300 h-80 w-80 object-cover"
               />

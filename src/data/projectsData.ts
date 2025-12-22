@@ -1,6 +1,34 @@
 import type { ProjectCardProps } from "@/components/ui/ProjectCard";
 
 export const projectsData: ProjectCardProps[] = [
+
+  {
+    title: "Coursewiser",
+    description: "Coursewiser is a course-specific AI teaching assistant designed to help students deeply understand their own class material. I fine-tuned LLaMA 3.2 3B on lecture slides, notes, and curated course resources so the model can reason within the exact context of a class rather than giving generic answers. The system uses a two-phase fine-tuning pipeline to first learn course semantics and then refine instruction-following behavior. It is deployed on AWS EC2 and delivered through a responsive React web app, with student feedback continuously improving answer quality over time.",
+    image: "/assets/Coursewiser.png",
+    category: "Web",
+    demo: "https://github.com/Aniket25042003/coursewiser",
+    source: "https://github.com/Aniket25042003/coursewiser",
+    technologies: ["LLaMA 3.2 3B", "AWS EC2", "React", "Node.js", "TailwindCSS", "Firebase", "TensorFlow"]
+  },
+  {
+    title: "Multimodal Theft Detection Agent",
+    description: "This project explores how multimodal AI can improve real-time surveillance intelligence. The system combines object detection, motion understanding, and high-level reasoning to detect potential theft events more accurately than traditional vision-only pipelines. Instead of relying on single-frame detections, it analyzes object interactions over time and applies contextual reasoning to reduce false alerts. A FastAPI-based backend generates automated incident reports, significantly reducing the need for manual video review.",
+    image: "/assets/MultimodalTheftDetectionAgent.png",
+    category: "AI",
+    demo: "https://github.com/Aniket25042003/multimodal-theft-detection-agent",
+    source: "https://github.com/Aniket25042003/multimodal-theft-detection-agent",
+    technologies: ["YOLOv8", "VideoMAE", "Multimodal LLM", "OpenCV", "FastAPI", "SQLite"]
+  },
+  {
+    title: "Fathom",
+    description: "Fathom is an AI-powered desktop data analysis tool built for privacy-conscious and offline workflows. It allows users to explore databases using natural language queries instead of writing SQL by hand. Behind the scenes, a hybrid AI + SQL pipeline translates user intent into structured queries and visualizes results through interactive charts. By running locally hosted language models via Ollama, Fathom keeps sensitive data on-device while still providing powerful, intuitive analytics.",
+    image: "/assets/Fathom.png",
+    category: "Web",
+    demo: "https://github.com/Aniket25042003/fathom",
+    source: "https://github.com/Aniket25042003/fathom",
+    technologies: ["Electron", "React", "FastAPI", "TailwindCSS", "Typescript", "SQLAlchemy", "Plotly", "Ollama"]
+  },
   {
     title: "Prepwiser",
     description: "Prepwiser is a web application designed to facilitate interview preparation and practice. It leverages real-time communication capabilities, AI-powered analysis, and interactive UI components to provide a comprehensive platform for users to enhance their interview skills. The application appears to integrate features like user authentication, real-time video/audio communication, interview recording, AI-driven analysis, and interactive UI elements.",
