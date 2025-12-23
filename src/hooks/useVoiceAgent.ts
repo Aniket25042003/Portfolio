@@ -3,6 +3,23 @@ import { useState, useRef, useCallback, useEffect } from 'react';
 // Backend URL - Change this to your Railway deployment URL in production
 const BACKEND_URL = import.meta.env.VITE_VOICE_BACKEND_URL || 'http://localhost:3001';
 
+// Debug logger - only logs in development
+const debugLog = (...args: any[]) => {
+  if (import.meta.env.DEV) {
+    console.log(...args);
+  }
+};
+
+// Error logger - less verbose in production
+const errorLog = (message: string, error?: any) => {
+  if (import.meta.env.DEV) {
+    console.error(message, error);
+  } else {
+    // In production, only log generic message without sensitive details
+    console.error(message);
+  }
+};
+
 // Session message limits
 const MAX_USER_QUESTIONS = 3; // User can ask 3 questions before closing
 
@@ -77,7 +94,7 @@ export const useVoiceAgent = (): UseVoiceAgentReturn => {
       recognitionRef.current.start();
       setIsListening(true);
     } catch (err) {
-      console.error('Failed to start listening:', err);
+      errorLog('Failed to start listening', err);
       if ((err as Error).message?.includes('already started')) {
         return;
       }
@@ -86,7 +103,7 @@ export const useVoiceAgent = (): UseVoiceAgentReturn => {
 
   // Play pre-recorded audio file (intro or outro)
   const playPreRecordedAudio = useCallback((type: 'intro' | 'outro', onEnd?: () => void) => {
-    console.log(`🎵 Playing ${type} audio...`);
+    debugLog(`🎵 Playing ${type} audio...`);
     setIsSpeaking(true);
     isSpeakingRef.current = true;
 
@@ -94,14 +111,14 @@ export const useVoiceAgent = (): UseVoiceAgentReturn => {
     audioRef.current = audio;
 
     audio.onended = () => {
-      console.log(`🔇 ${type} audio ended`);
+      debugLog(`🔇 ${type} audio ended`);
       setIsSpeaking(false);
       isSpeakingRef.current = false;
       onEnd?.();
     };
 
     audio.onerror = (e) => {
-      console.error(`❌ ${type} audio error:`, e);
+      errorLog(`Audio playback error (${type})`, e);
       setIsSpeaking(false);
       isSpeakingRef.current = false;
       setError(`Failed to play ${type} audio`);
@@ -109,7 +126,7 @@ export const useVoiceAgent = (): UseVoiceAgentReturn => {
     };
 
     audio.play().catch((err) => {
-      console.error(`❌ ${type} audio play failed:`, err);
+      errorLog(`Audio play failed (${type})`, err);
       setIsSpeaking(false);
       isSpeakingRef.current = false;
       onEnd?.();
@@ -119,11 +136,11 @@ export const useVoiceAgent = (): UseVoiceAgentReturn => {
   // Text-to-Speech using ElevenLabs via backend (only for answers)
   const speak = useCallback(async (text: string, autoListenAfter: boolean = true) => {
     if (!text || isSessionEndedRef.current) {
-      console.log('⚠️ Speak skipped: no text or session ended');
+      debugLog('⚠️ Speak skipped: no text or session ended');
       return;
     }
 
-    console.log('🔊 Speaking:', text.substring(0, 50) + '...');
+    debugLog('🔊 Speaking:', text.substring(0, 50) + '...');
     setIsSpeaking(true);
     isSpeakingRef.current = true;
 
@@ -157,13 +174,13 @@ export const useVoiceAgent = (): UseVoiceAgentReturn => {
         audioRef.current = audio;
 
         audio.onended = () => {
-          console.log('🔇 Audio playback ended');
+          debugLog('🔇 Audio playback ended');
           setIsSpeaking(false);
           isSpeakingRef.current = false;
           URL.revokeObjectURL(audioUrl);
           
           if (autoListenAfter && isActiveRef.current && !isSessionEndedRef.current) {
-            console.log('🎤 Auto-starting listening after speak...');
+            debugLog('🎤 Auto-starting listening after speak...');
             setTimeout(() => tryStartListening(), 300);
           }
         };
@@ -180,7 +197,7 @@ export const useVoiceAgent = (): UseVoiceAgentReturn => {
         throw new Error('No audio data received from server');
       }
     } catch (err) {
-      console.error('❌ TTS Error:', err);
+      errorLog('Text-to-speech error', err);
       setIsSpeaking(false);
       isSpeakingRef.current = false;
       setError(`Speech failed: ${(err as Error).message}`);
@@ -193,7 +210,7 @@ export const useVoiceAgent = (): UseVoiceAgentReturn => {
 
   // End session with outro
   const endSessionWithOutro = useCallback(() => {
-    console.log('🔚 Ending session with outro...');
+    debugLog('🔚 Ending session with outro...');
     isSessionEndedRef.current = true;
     setIsProcessing(false);
     isProcessingRef.current = false;
@@ -215,11 +232,11 @@ export const useVoiceAgent = (): UseVoiceAgentReturn => {
     setQuestionsAsked(newQuestionCount);
     questionsAskedRef.current = newQuestionCount;
     
-    console.log(`💬 Question ${newQuestionCount}/${MAX_USER_QUESTIONS}: ${userMessage}`);
+    debugLog(`💬 Question ${newQuestionCount}/${MAX_USER_QUESTIONS}: ${userMessage}`);
 
     // Check if this is the last question (3rd question) - play outro instead of answering
     if (newQuestionCount >= MAX_USER_QUESTIONS) {
-      console.log('📍 Max questions reached, playing outro...');
+      debugLog('📍 Max questions reached, playing outro...');
       endSessionWithOutro();
       return;
     }
@@ -255,7 +272,7 @@ export const useVoiceAgent = (): UseVoiceAgentReturn => {
         throw new Error('Invalid response from server');
       }
     } catch (err) {
-      console.error('❌ Chat Error:', err);
+      errorLog('Chat API error', err);
       setIsProcessing(false);
       isProcessingRef.current = false;
       setError(`Failed to get response: ${(err as Error).message}`);
@@ -307,7 +324,7 @@ export const useVoiceAgent = (): UseVoiceAgentReturn => {
     };
 
     recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
-      console.error('Speech recognition error:', event.error);
+      errorLog('Speech recognition error', event.error);
       setIsListening(false);
       
       if (event.error === 'no-speech' || event.error === 'aborted') {
@@ -333,7 +350,7 @@ export const useVoiceAgent = (): UseVoiceAgentReturn => {
     // Play pre-recorded intro, then start listening
     playPreRecordedAudio('intro', () => {
       if (isActiveRef.current && !isSessionEndedRef.current) {
-        console.log('🎤 Starting to listen after intro...');
+        debugLog('🎤 Starting to listen after intro...');
         tryStartListening();
       }
     });
