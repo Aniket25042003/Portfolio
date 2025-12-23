@@ -18,21 +18,21 @@ export const publicationsData: PublicationCardProps[] = [
     title: "Comparative Analysis of Regression Models on Datasets with Varying Feature Complexity",
     link: "https://ieeexplore.ieee.org/document/11293872",
     journal: "IEEE Xplore",
-    year: "2024",
+    year: "2025",
     description: "This study compares different regression models across datasets with varying feature complexity to understand how model performance changes with increasing data dimensionality and feature interactions."
   },
   {
     title: "Performance Analysis of Deep Learning Models on Modern Hardware Accelerators: A Comparative Study of CPU, GPU, and TPU",
     link: "https://ashlanduniversity-my.sharepoint.com/:b:/g/personal/aabushgr_ashland_edu/EX_Mzg3MyL1JjsZgdG4HqA8BOy_1Ed3HrIexQmzKcqaLfg?e=v69omQ",
     journal: "Ashland University Research",
-    year: "2024",
+    year: "2025",
     description: "A comprehensive analysis comparing the performance of deep learning models across different hardware accelerators including CPU, GPU, and TPU, examining inference speed, memory usage, and energy efficiency."
   },
   {
     title: "Impact of Containerization and Orchestration on Deep Learning Inference Performance",
     link: "https://ashlanduniversity-my.sharepoint.com/:w:/g/personal/apatel12_ashland_edu/IQBgiZkPq8ROSJnwamjXbsuyAWPDWEq47FsXFEJWEPcdWg4?e=xB8ewg",
     journal: "Ashland University Research",
-    year: "2024",
+    year: "2025",
     description: "This research investigates how containerization technologies and orchestration frameworks affect the performance of deep learning inference workloads, with a focus on deployment efficiency and scalability."
   }
 ];
