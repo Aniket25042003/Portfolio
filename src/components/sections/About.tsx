@@ -56,7 +56,7 @@ const About = () => {
             transition={{ duration: 0.5 }}
           >
             <p className="text-slate dark:text-slate-light">
-              Hi, I'm Aniket Patel, a senior majoring in Computer Science at Ashland University with Mathematics and Management Information Systems minors, where I currently serve as an AI/ML Researcher. I'm passionate about creating smart, scalable systems that blend software engineering, machine learning, and artifician intelligence to solve meaningful, real-world problems.
+              Hi, I'm Aniket Patel, a senior majoring in Computer Science at Ashland University with Mathematics and Management Information Systems minors, where I currently serve as an AI/ML Researcher. I'm passionate about creating smart, scalable systems that blend software engineering, machine learning, and artificial intelligence to solve meaningful, real-world problems.
             </p>
             <p className="text-slate dark:text-slate-light">
               My academic and research interests lie at the intersection of applied AI, real-time systems, and hardware acceleration.
