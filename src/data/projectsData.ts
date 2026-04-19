@@ -1,7 +1,24 @@
 import type { ProjectCardProps } from "@/components/ui/ProjectCard";
 
 export const projectsData: ProjectCardProps[] = [
-
+  {
+    title: "Driver Monitoring System",
+    description: "Driver Monitoring System is a real-time edge AI project designed to improve road safety by detecting driver attention, drowsiness, and critical roadway conditions. I built it as a multi-model perception pipeline that combines object detection, lane detection, and traffic light/sign classification into one unified system. The project was optimized for low-latency inference on NVIDIA Jetson hardware using techniques like TensorRT acceleration, model pruning, and FP16 quantization. It was designed with a production mindset, focusing on accuracy, responsiveness, and reliable deployment on constrained edge devices.",
+    image: "/assets/driver_monitoring_system.png",
+    category: "AI",
+    demo: "https://github.com/Aniket25042003/Driver_Monitoring_System",
+    source: "https://github.com/Aniket25042003/Driver_Monitoring_System",
+    technologies: ["PyTorch", "YOLOv8", "MobileNetV3", "UltraFast Lane Detection V2", "ONNX", "TensorRT", "OpenCV", "Docker", "NVIDIA Jetson Orin Nano"]
+  },
+  {
+    title: "Eagle-Foundry",
+    description: "Eagle-Foundry is a full-stack startup incubator platform built to support multi-role workflows, secure access, and scalable backend operations. I designed the system with a TypeScript and React frontend, a Node.js and Express backend, PostgreSQL with Prisma ORM, and JWT-based authentication with token rotation and MFA. The backend follows an event-driven architecture using AWS services like SQS, SES, S3, and EC2 to handle asynchronous tasks, file storage, and transactional communication. The goal was to create a polished, reliable product that feels modern on the front end while staying modular, scalable, and production-ready behind the scenes.",
+    image: "/assets/Eagle-Foundry.png",
+    category: "Web",
+    demo: "https://github.com/Aniket25042003/Eagle-Foundry",
+    source: "https://github.com/Aniket25042003/Eagle-Foundry",
+    technologies: ["Node.js", "TypeScript", "React", "PostgreSQL", "Prisma", "AWS EC2", "AWS S3", "AWS SQS", "AWS SES", "Docker"]
+  },
   {
     title: "Coursewiser",
     description: "Coursewiser is a course-specific AI teaching assistant designed to help students deeply understand their own class material. I fine-tuned LLaMA 3.2 3B on lecture slides, notes, and curated course resources so the model can reason within the exact context of a class rather than giving generic answers. The system uses a two-phase fine-tuning pipeline to first learn course semantics and then refine instruction-following behavior. It is deployed on AWS EC2 and delivered through a responsive React web app, with student feedback continuously improving answer quality over time.",
@@ -45,7 +62,7 @@ export const projectsData: ProjectCardProps[] = [
     category: "Web",
     demo: "https://cod-doc.vercel.app/",
     source: "https://github.com/Aniket25042003/CodDoc.git",
-    technologies: ["Next.js", "AI Agents", "JavaScript","Gemini", "React", "Typescript", "Tailwind CSS"]
+    technologies: ["Next.js", "AI Agents", "JavaScript", "Gemini", "React", "Typescript", "Tailwind CSS"]
   },
   {
     title: "MarketMinds",
@@ -54,7 +71,7 @@ export const projectsData: ProjectCardProps[] = [
     category: "Web",
     demo: "https://github.com/Aniket25042003/MarketMinds.git",
     source: "https://github.com/Aniket25042003/MarketMinds.git",
-    technologies: ["Next.js", "CrewAI", "JavaScript","Gemini", "React", "Typescript", "Tailwind CSS"]
+    technologies: ["Next.js", "CrewAI", "JavaScript", "Gemini", "React", "Typescript", "Tailwind CSS"]
   },
   {
     title: "Historaai",
@@ -72,7 +89,7 @@ export const projectsData: ProjectCardProps[] = [
     category: "Web",
     demo: "https://google-note-clone.vercel.app/",
     source: "https://github.com/Aniket25042003/GoogleNote_Clone.git",
-    technologies: ["HTML", "CSS", "JavaScript","Node.js", "LLaMA 3.2", "Tesseract OCR"]
+    technologies: ["HTML", "CSS", "JavaScript", "Node.js", "LLaMA 3.2", "Tesseract OCR"]
   },
   {
     title: "MeetMate",
