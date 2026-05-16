@@ -2,6 +2,15 @@ import type { ProjectCardProps } from "@/components/ui/ProjectCard";
 
 export const projectsData: ProjectCardProps[] = [
   {
+    title: "Stoa - Multi-Agent GTM & Marketing Workspace",
+    description: "Stoa is a production-grade multi-agent GTM and marketing workspace built for founders and operators to research markets, plan go-to-market strategies, and execute marketing, all within a single AI-powered platform. At its core, the system runs two independent LangGraph pipelines: a 5-node autonomous GTM research graph and a 7-node marketing graph that routes across 8 specialist subagents covering everything from competitive intelligence and copywriting to channel planning and brand voice. Every agent in both pipelines follows a structured plan → execute → approve → revise autonomy loop, ensuring outputs stay citation-grounded and hallucination-resistant rather than drifting on unchecked LLM generations. To power the research layer, I built a FastMCP stdio server exposing 5 tools, Tavily web search, SerpAPI competitor profiling, and Playwright/Crawlee deep crawl into a dynamic tool registry where the LLM selects and budgets its own tool calls at runtime, with LangSmith tracing wired across every LangGraph span for full observability and run correlation. Both pipelines share a persistent pgvector knowledge base backed by Vertex AI text-embedding-004 (768-dim, HNSW-indexed), storing GTM research outputs and marketing learnings across 8 structured knowledge types so agents always retrieve grounded company context and never start from a blank slate. On the infrastructure side, Celery workers handle all long-running LangGraph invocations asynchronously, publishing live agent progress into Redis Streams that FastAPI SSE endpoints tail in real time with Redis also serving as the Celery broker, ephemeral cross-agent memory store, and idempotent turn-lock that prevents duplicate marketing chat processing. The frontend, built in Next.js 15, ties everything together with a live run timeline, multi-surface workspaces for GTM planning and marketing chat, and a human-in-the-loop plan approval gate before any autonomous research begins, secured end-to-end via Supabase JWT auth, per-table RLS policies, and a Vertex AI (Gemini) primary LLM with OpenAI as an automatic failover.",
+    image: "/assets/driver_monitoring_system.png",
+    category: "AI",
+    demo: "https://stoaai.vercel.app/",
+    source: "https://github.com/Aniket25042003/Stoa",
+    technologies: ["LangGraph", "LangSmith", "FastMCP", "FastAPI", "Celery", "Redis", "Next.js", "Supabase (PostgreSQL + pgvector + RLS)", "Vertex AI", "OpenAI", "Playwright", "Crawlee", "Tavily", "SerpAPI"]
+  },
+  {
     title: "Driver Monitoring System",
     description: "Driver Monitoring System is a real-time edge AI project designed to improve road safety by detecting driver attention, drowsiness, and critical roadway conditions. I built it as a multi-model perception pipeline that combines object detection, lane detection, and traffic light/sign classification into one unified system. The project was optimized for low-latency inference on NVIDIA Jetson hardware using techniques like TensorRT acceleration, model pruning, and FP16 quantization. It was designed with a production mindset, focusing on accuracy, responsiveness, and reliable deployment on constrained edge devices.",
     image: "/assets/driver_monitoring_system.png",
@@ -66,7 +75,7 @@ export const projectsData: ProjectCardProps[] = [
   },
   {
     title: "MarketMinds",
-    description: "MarketMinds is an AI-powered web application designed to simplify and automate product and market research. It leverages autonomous AI agents to provide actionable insights, competitor analysis, and strategic recommendations—all in one unified interface.",
+    description: "MarketMinds is an AI-powered web application designed to simplify and automate product and market research. It leverages autonomous AI agents to provide actionable insights, competitor analysis, and strategic recommendations, all in one unified interface.",
     image: "/assets/MarketMinds.png",
     category: "Web",
     demo: "https://github.com/Aniket25042003/MarketMinds.git",
